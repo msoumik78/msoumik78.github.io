@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "This is the first post of Sayantani"
 date:   2017-08-22 16:55:23 +0530
 categories: jekyll update
 ---
