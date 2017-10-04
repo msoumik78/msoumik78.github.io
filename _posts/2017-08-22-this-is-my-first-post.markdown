@@ -19,7 +19,7 @@ So the question that we are facing now is how do
 we manage this huge amount of data and also economically manage the same. One
 thing is for sure – this huge volume of data can’t be efficiently and
 economically managed using standard RDBMS solutions. This has given rise to a
-completely different genre of databases which are commonly referred as `NoSQL databases`. At the moment, there
+completely different genre of databases which are commonly referred as *NoSQL databases*. At the moment, there
 are 150+ types of NoSQL databases. Although each one of them tends to vary from
 the other in some way or the other – following are some common properties that
 can be attributed to all types of NoSQL databases:
@@ -34,7 +34,8 @@ values or a data structure. Popular examples of this type of database include
 Memcached, Redis, Riak etc. These key value pairs are very popularly used as
 caching solutions to cache frequently referred data in mobile / web application
 to increase the performance of desktop / mobile application
-
 * Document Oriented Databases
 * Bigtables / Column oriented database
 * Graph databases
+
+## CAP theorem
