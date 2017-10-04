@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "This is the second post of Sayantani"
+title:  "Let's quickly learn MongoDB"
 date:   2017-08-24 16:55:23 +0530
 categories: jekyll update
 ---
