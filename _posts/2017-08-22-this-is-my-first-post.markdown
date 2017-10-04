@@ -1,25 +1,26 @@
 ---
 layout: post
-title:  "This is the first post of Sayantani"
+title:  "Why use NoSQL"
 date:   2017-08-22 16:55:23 +0530
-categories: jekyll update
+categories: NoSQL
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+# Why use NoSQL solution
 
-Jekyll also offers powerful support for code snippets:
+We are living in the age of data and it grows exponentially
+in today’s world. Forget data intensive apps / companies like Youtube /
+Facebook – even small to medium sized enterprises in today’s world are facing a
+never seen before kind of data boom. I read somewhere that Facebook CEO Mark
+Zuckerberg had famously said that there are more people on Facebook today that
+the number of people living in the planet 100 years back. Isn’t it simply
+incredible!! ?
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+So the question that we are facing now is how do
+we manage this huge amount of data and also economically manage the same. One
+thing is for sure – this huge volume of data can’t be efficiently and
+economically managed using standard RDBMS solutions. This has given rise to a
+completely different genre of databases which are commonly referred as “No SQL databases”. At the moment, there
+are 150+ types of NoSQL databases. Although each one of them tends to vary from
+the other in some way or the other – following are some common properties that
+can be attributed to all types of NoSQL databases:
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
