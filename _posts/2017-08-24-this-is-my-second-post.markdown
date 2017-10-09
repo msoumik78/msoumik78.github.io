@@ -4,22 +4,30 @@ title:  "Let's quickly learn MongoDB"
 date:   2017-08-24 16:55:23 +0530
 categories: jekyll update
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+# MongoDB
 
-Jekyll also offers powerful support for code snippets:
+MongoDB
+is one of the most popular document oriented databases which is a major type of
+NoSQL database.  The document oriented databases closely resemble RDBMS in the sense
+that the data is stored in form of documents (which are similar to rows in RDBMS) and the 
+documents are stored in collections (which are similar to tables in RDBMS).  
+The biggest difference with RDBMS is that the documents are indeed meant for storing semi 
+structured data and also the documents are completely schema free. This means that in MongoDB
+you can go ahead and store documents in collections without even creating the collection
+in the first place. This also means that MongoDb insert operations are much
+faster than corresponding insert operations of RDBMS.
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+## Typical CRUD syntax in MongoDB
+
+MongoDB does not support ANSI SQL syntax
+
+
+
+## MongoDB Text & geospatial Index
+
+## MongoDB Replication & Sharding
+
+
