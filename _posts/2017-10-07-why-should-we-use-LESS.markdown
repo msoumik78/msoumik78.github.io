@@ -15,8 +15,3 @@ LESS has 4 distinct advantages over normal CSS :
 * Allows arithmetic operators to be used
 
 
-
-
-
-
-
