@@ -15,7 +15,9 @@ Serialization technique can be used to read and write data if that data will be 
 Serialization (Converting an in-memory object to serialized state) -  
 
 ObjectOutputStream os = new ObjectOutputStream (new FileOutputStream("x.ser")); 
-os.writeObject();De-Serialization (Converting a serialized state to in-memory object) -   
+os.writeObject();
+
+De-Serialization (Converting a serialized state to in-memory object) -   
 ObjectInputStream os = new ObjectInputStream (new FileInputStream("x.ser")); 
 os.readObject();
 
