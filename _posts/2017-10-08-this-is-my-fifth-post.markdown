@@ -1,16 +1,19 @@
 ---
 layout: post
-title:  "Hadoop fundamentals"
-date:   2017-10-08 16:55:23 +0530
-categories: jekyll update
+title: Hadoop Fundamentals
+date: 2017-10-10 16:55:23 +0530
+categories: jekyll lupdate
 ---
+
 
 # Hadoop Fundamentals
 
 Hadoop standalone mode :
-By default, Hadoop is configured to run in a non-distributed or standalone mode, as a single Java process. There are no daemons running and everything runs in a single JVM instance. HDFS is not used.
+By default, Hadoop is configured to run in a non-distributed or standalone mode, as a single Java process. 
+There are no daemons running and everything runs in a single JVM instance. HDFS is not used.
 
-Hadoop pseudo distributed mode :The Hadoop daemons run on a local machine, thus simulating a cluster on a small scale. Different Hadoop daemons run in different JVM instances, but on a single machine. HDFS is used instead of local FS.
+Hadoop pseudo distributed mode :The Hadoop daemons run on a local machine, thus simulating a cluster on a small scale. 
+Different Hadoop daemons run in different JVM instances, but on a single machine. HDFS is used instead of local FS.
 
 Steps for hadoop installation in pseudo distributed mode in Ubuntu
 * Create a hadoop user and hadoop group, commands `$ sudo addgroup hadoop` and `$ sudo adduser --ingroup hadoop hduser`
