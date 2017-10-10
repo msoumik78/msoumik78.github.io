@@ -1,8 +1,8 @@
 ---
-layout: post
+layout:  post
 title:  "Some Core Java Fundamentals"
-date:   2017-10-06 16:55:23 +0530
-categories: jekyll update
+date:    2017-10-06 16:55:23 +0530
+categories:  jekyll update
 ---
 
 # Core Java Fundamentals
