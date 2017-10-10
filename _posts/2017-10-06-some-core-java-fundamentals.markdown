@@ -6,6 +6,7 @@ categories:  jekyll update
 ---
 
 # Core Java Fundamentals
+This will be a topic 
 
 ### Serialization
 
