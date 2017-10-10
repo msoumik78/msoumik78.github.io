@@ -19,7 +19,7 @@ Some other important concepts introduced in HTML5 include the following :
 * LocalStorage and SessionStorage if(typeof(Storage) !== "undefined") localStorage.setItem(“foo”, “bar”)
 Localstorage stays even after the browser is closed but SessionStorage is only applicable for the current browser session.
 
-###### Localstorage vs Cookies vs indexedDB
+### Localstorage vs Cookies vs indexedDB
 Cookies are a security risk as the data is exchanged evertime with the server. Cookies can store only 4KB of data. If your server
 needs data, store it in cookies. 
 
@@ -30,7 +30,7 @@ no expiration date.
 
 IndexedDB can store much more data and can store data apart from String.Main advantage of IndexedDB is that it is a asynchronous API and hence do not block the UI. 
 
-###### Webworkers
+### Webworkers
 
 This helps to actually do a javascript task in the background without blocking UI or user actions
 
