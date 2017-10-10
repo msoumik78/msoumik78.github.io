@@ -1,8 +1,14 @@
+
 ---
-layout: posttitle:  "What is Memcache ?"
+
+layout: post
+title:  "Why use NoSQL"
 date:   2017-08-22 16:55:23 +0530
 categories: jekyll update
+
 ---
+
+
 
 # What is Memcache ?
 It's a distributed in memory object caching system which means that it is not a persistent data store and all data is lost after 
