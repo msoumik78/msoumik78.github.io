@@ -1,28 +1,56 @@
-﻿---
+---
 layout: post
-title:  "This is the third post of Sayantani"
+title:  "Modern day HTML5 quickstart"
 date:   2017-09-11 16:55:23 +0530
 categories: jekyll update
 ---
 
-This is the 3rd blog post from sayantani made by Soumik
+# HTML5 Fundamentals
 
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+Following are the important additions in HTML5
+* Addition os semantic keywords (like header, footer, article, section)  which makes it easy for search engine bots to read the page
+* Addition of the audio and video tags 
+* Addition of the canvas and svg tags
+* Addition of the folllowing new HTML inputtypes (datetime, email, number, URL etc)e) Addition of output as an output type.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
 
-Jekyll also offers powerful support for code snippets:
+Some other important concepts introduced in HTML5 include the following :
+* Geolocation API If  ((navigatior.geoloction() != undefined ) lat= navigator.pos.coords.latitude, long = navigator.pos.coords.longitude
+* LocalStorage and SessionStorage if(typeof(Storage) !== "undefined") localStorage.setItem(“foo”, “bar”)
+Localstorage stays even after the browser is closed but SessionStorage is only applicable for the current browser session.
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+###### Localstorage vs Cookies vs indexedDB
+Cookies are a security risk as the data is exchanged evertime with the server. Cookies can store only 4KB of data. If your server
+needs data, store it in cookies. 
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+Localstorage / SessionStorage can  store only Strings as key / value pairs, so one has to 
+use JSON.stringify() and JSON.parseString() to set / get non string data. Also it is essentially a DOM storage with a synchronous
+API. IF your client needs data, store it in localstorage / sessionstorage. Localstorage can store 5MB of data per domain with 
+no expiration date.
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+IndexedDB can store much more data and can store data apart from String.Main advantage of IndexedDB is that it is a asynchronous API and hence do not block the UI. 
+
+###### Webworkers
+
+This helps to actually do a javascript task in the background without blocking UI or user actions
+
+var w;
+function startWorker() {
+    if(typeof(Worker) !== "undefined") {
+          if(typeof(w) == "undefined") {            
+              w = new Worker("demo_workers.js");        
+           }        
+         w.onmessage = function(event) {
+              document.getElementById("result").innerHTML = event.data;
+           };    
+         } else {        
+              document.getElementById("result").innerHTML = "Sorry! No Web Worker support.";
+        }
+}
+
+
+function stopWorker() {     
+    w.terminate();    
+    w = undefined;
+  }
+
