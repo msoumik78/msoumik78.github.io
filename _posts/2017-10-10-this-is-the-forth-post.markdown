@@ -1,11 +1,9 @@
 
 ---
-
 layout: post
-title:  "Why use NoSQL"
-date:   2017-08-22 16:55:23 +0530
+title: "What is Memcache"
+date: 2017-08-22 16:55:23 +0530
 categories: jekyll update
-
 ---
 
 
