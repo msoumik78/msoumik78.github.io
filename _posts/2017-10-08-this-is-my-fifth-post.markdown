@@ -1,5 +1,5 @@
 ---
-type: post
+layout: post
 title:  "Hadoop fundamentals"
 date:   2017-10-08 16:55:23 +0530
 categories: jekyll update
