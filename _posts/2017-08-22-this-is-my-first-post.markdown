@@ -38,4 +38,53 @@ to increase the performance of desktop / mobile application
 * Bigtables / Column oriented database
 * Graph databases
 
-## CAP theorem
+## Let’s understand CAP Theorem and the debate between Consistency & Availability
+
+Interestingly there is a very good theorem which clearly
+explains the challenges of a distributed architecture. It is known as CAP
+theorem, after . Essentially it states that out of the following 3 properties/characteristics,
+any database system in the world can honor at most 2 and can never
+satisfactorily honor all 3. Well, below are the 3 properties/characteristics
+that we were talking about:
+
+Consistency (C) – This indicates, whether in a
+distributed database architecture (where the data is sharded and stored in many
+machines), the database can provide correct (latest) results to all the clients
+querying for results. Availability (A) – This indicates, whether in a
+distributed database architecture, the database can provide response to all the
+clients querying for results. Although some of the responses can still not be
+latest, a database with a higher availability will still strive to provide some
+response to all of its clients. Partition Tolerance (P) – This indicates,
+whether in a distributed database architecture, the database system, as a
+whole, can still respond if there are outages / network failures of some of the
+nodes.
+
+As you might have probably guessed, the first 2
+characteristics (Consistency & Availability) are often a tradeoff. So
+basically it means that if you want higher consistency, you will have to forego
+a bit of availability. This means that if you want to show correct response to
+your clients, it means that may be some clients will not receive response but
+whoever will receive response – they will always get the latest response.
+Imagine the case of a messaging platform – where consistency is of paramount
+importance – you can’t afford to show a stale message to any client but it is
+probably okay if you can’t respond to all clients. But whoever you can respond
+– should receive the latest data.
+
+On the other hand – if you want more availability you will
+have to let go a bit of availability. Which means that if you want to show
+response to all clients – it might mean some clients will indeed see the latest
+response while some others might be seeing a bit of stale response at the
+moment. As an example imagine an ecommerce platform – where all users are
+displayed an array of huge number of products. It is very important that all
+users are shown the list of products while it might be okay if some users might
+still not see the latest product while some others will see all the latest
+products. 
+
+So in the world of distributed databases –
+consistency and availability are always a tradeoff. However if you go for less
+consistency (and more availability) – the clients which are receiving (at the
+moment) a stale response – they will also eventually see the latest response.
+This is known as the concept of eventual consistency. So in the world of NoSQL
+– we say that they follow a model of BASE (contrary to the ACID characteristics
+of RDBMS) – which means they are Basically Available, they are in a Soft state
+and will be Eventually Consistent.
