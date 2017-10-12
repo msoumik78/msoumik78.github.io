@@ -1,7 +1,7 @@
 ---
 layout:  post
 title:  "Some Core Java Fundamentals"
-date:    2017-10-06 16:55:23 +0530
+date:   2017-10-06 16:55:23 +0530
 categories:  jekyll update
 ---
 
