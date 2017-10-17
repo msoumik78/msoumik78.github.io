@@ -7,7 +7,7 @@ post|"Scala concepts"|2017-08-22 16:55:23 +0530|jekyll update|
 ### How to run a Scala Program
 
 ###### Scala import statements
-* If everything is imported from a package – we use the underscore (_) in place of asterik. Like  - import x.y._
+* If everything is imported from a package – we use the underscore in place of asterik. Like  - import `x.y._`
 * Import statements can occur at any place of the source file (unlike java files where the import statement can only be at the top)
 * With one import statement, 2 different classes (from the same package) can be imported. Like – import x.y{a,b}
 * Import statements can also use aliasing, like – import scala.collection.mutable.{Map => MutableMap}
