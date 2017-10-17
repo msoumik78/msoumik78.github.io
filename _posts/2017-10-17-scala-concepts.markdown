@@ -1,9 +1,6 @@
----
-layout: post
-title:  "Scala concepts"
-date:   2017-08-22 16:55:23 +0530
-categories: jekyll update
----
+|layout|title|date|categories|
+|---|---|---|---|
+post|"Scala concepts"|2017-08-22 16:55:23 +0530|jekyll update| 
 
 # Scala Concepts
 
