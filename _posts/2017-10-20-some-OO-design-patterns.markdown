@@ -45,3 +45,33 @@ from its representation so that the same construction process can create multipl
 
 Prototype - This pattern is used to create an exact clone if creation of an object is an expensive operation. Following types are available:a) Shallow copy - this is available in Java out of box.
 The object class contains the clone() method but one should also implement the marker Cloneable interface. It copies only primitive fields and not object references.b) Deep copy - this means that the entire object tree has to be cloned. This does not come out of box but Java serialization and deserialization can be used to implement this.
+
+
+# Structural Pattern
+
+Decorator - In this pattern, additional responsibilities are attached to a class dynamically at runtime. Ideally a decorator implementation should have the decorator interface as an object instance variable. Java I/O contains ample examples of decorators. Below is the code snippet:
+
+{% highlight ruby %}
+ public class DecoratorI {    
+    public String description();    
+    public float cost(); 
+  }
+ 
+ public class ConcreteDecorator1 implements Decorator1 {    
+      private DecoratorI decI;    
+      public void ConcereteDcorator1(DecoratorI dec){        
+          decI = dec;    
+       }  
+    public String description() {        
+      return "Concere Decorator1" + decI.description();        
+    }    
+    
+    public float cost(); {         
+      return x + decI.cost();        
+   } }
+
+{% endhighlight %}
+
+Adapter - This pattern is used to implement a specific interface (which the client calls) and in turn delegates call to a different method. Following are the types:a) Object Adapter - b) Class Adapter - 
+Facade - Provides a single unified interface instead of making a lot of calls to all granular level methods.
+Proxy- Essentially a layer between the client and the server and can be of the following types:a) Remote - Java RMI / EJB's stubs / skeletons are classic examplesb) Virtual - If the actual object is heavy (like an image) a virtual proxy can be usedc) Protection proxy - Typically corporate firewalls are examples
