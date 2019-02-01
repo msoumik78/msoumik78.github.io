@@ -10,8 +10,8 @@ This will be a topic
 
 One can mark an object to be serializable just by implementing the marker Serializable interface.
 Serialization technique can be used to read and write data if that data will be read by Java programs only.
-
-Serialization (Converting an in-memory object to serialized state) -  
+{% highlight ruby %}
+// Serialization (Converting an in-memory object to serialized state) -  
 
 ObjectOutputStream os = new ObjectOutputStream (new FileOutputStream("x.ser")); 
 os.writeObject();
@@ -19,6 +19,8 @@ os.writeObject();
 De-Serialization (Converting a serialized state to in-memory object) -   
 ObjectInputStream os = new ObjectInputStream (new FileInputStream("x.ser")); 
 os.readObject();
+
+{% endhighlight %}
 
 Static & Transient variables are not serialized. One can mark a variable transient if that variable does not contain any original value (derived from other fields)
 When an object gets serialized - the entire object graph gets serialized which means that all objects referenced by the object gets serialized. 
