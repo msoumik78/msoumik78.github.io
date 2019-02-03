@@ -45,11 +45,16 @@ Following are some code snippets below:
 {% endhighlight %}
 
 #### Hadoop Serialization
+Since hadoop uses a heavy degree of network transmission for executing its jobs, it needs a very lightweight and efficient serialization system and java's default derializable mechanism is simply too heavy for them. Hence Hadoop has come up with its own interface named **Writable** 
 
 #### AVRO Serialization
+AVRO is another data serializable 
 
 
 #### Protobuf Serialization
 
 
 ### Some final thoughts 
+If you are developing a low latency performance application, you must look at alternatives of Java's default serialization system. If the system which will serialize and de-serialize - all are written in Java - then you can either override readObject and writeObject method or also implement the Externalizable interfacec correctly.
+
+However if you are dealing with an application where multiple programming languages are involved (which means that serialization might be done from one language while de-serialization is done from another non Java language), then it is worthwhile to use Apache AVRO or Google's protocol buffers or Apache Thrift as the serialization framework. 
