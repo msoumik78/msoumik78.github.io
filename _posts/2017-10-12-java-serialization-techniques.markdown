@@ -1,6 +1,6 @@
 |layout|title|date|categories|
 |---|---|---|---|
-post|"Some Core Java Fundamentals"|2017-08-22 16:55:23 +0530|jekyll update| 
+post|"Java Serialization"|2017-08-22 16:55:23 +0530|jekyll update| 
 
 ### Serialization
 
