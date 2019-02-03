@@ -18,11 +18,11 @@ os.readObject();
 
 {% endhighlight %}
 
-Static & Transient variables are not serialized. One can mark a variable transient if that variable does not contain any original value (derived from other fields)
+**Static** & **Transient** variables are not serialized. One can mark a variable **transient** if that variable does not contain any original value (derived from other fields)
 When an object gets serialized - the entire object graph gets serialized which means that all objects referenced by the object gets serialized. 
-If any object in the graph is not serializable - the entire chain breaks and serialization fails. Hence Serialization is a whole or none proposition. 
+If any object in the graph is not serializable - the entire chain breaks and serialization fails. Hence Serialization is a *whole or none proposition.* 
 During the process of de-serialization, constructors are not called (and hence the objects are not default initialized). If any object in the hierarchy is not serializable - constructor chaining starts from that point. Once constructor chaining starts, it can't be stopped.
-A long field by the name "serialVersionUID" can be used to prevent any issues during de-serialization process if there is a change in the class after serialization happened. (private long serialVersionUID). But using this field means that the programmer is taking risk of any bad changes.
+A long field by the name **"serialVersionUID"** can be used to prevent any issues during de-serialization process if there is a change in the class after serialization happened. (private long serialVersionUID). But using this field means that the programmer is taking risk of any bad changes.
 Acceptable changes for Serialization - 
 * Field addition
 * Fields changed from transient to non transientUn-acceptable changes for Serialization - 
