@@ -1,6 +1,6 @@
 |layout|title|date|categories|
 |---|---|---|---|
-post|"Java Serialization"|2017-08-22 16:55:23 +0530|jekyll update| 
+post|"Java's default serialization"|2017-08-22 16:55:23 +0530|jekyll update| 
 
 ### Serialization
 
