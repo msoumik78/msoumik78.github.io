@@ -30,42 +30,14 @@ Following are some salient aspects of Java's default serialization:
 
 Following are the acceptable changes for Serialization - 
 * Field addition
-* Fields changed from transient to non transient
+* Fields changed from transient to non transient.      
+
 Following are the un-acceptable changes for Serialization - 
 * Field deletion 
 * Fields changed from non transient to transient
 
-An alternative to implementing the Serializable interface is implementing the Externalizable interface. This can be used in the following cases:
+Although implementing Java's default serialization is a breeze (by simply implementing one marker interface), following are several disadvantages of the default serialization:
+*  Java's default serialization stores the metadata (class details) along with the serialized object to make it more generic based approach and hence the serialized data occupies much more space and its not suitable for RPC calls
+*  Further Java's default serialization always creates a new object instance in memory during the process of de-serialization and this approach also might not be most memory efficient.
 
-* One can overide the default serialization (by overriding the readObject() and writeObject() method in the class which implements Serialization). In fact this is also a technique to ensure that you can override these methods and throw a NotSerializableException - 
-this is to make a subclass no serializable (when its parent is serializable)
-* One can implement the Externalizable interface and override the readExternal() and writeExternal() methods and implement the custom serialization logic. This can improve the performance.
-
-Serialization technique can be used to read and write data if that data will be read by Java programs only.
-
-### Collections 
-
-Main types of Collections are-- List (ordered), Set (No duplicates) & Maps (Key Value pairs)
-Types of List : 
-* Vector (threadsafe/sychoronized and hence slow), 
-* ArrayList (not threadsafe & hence fast), 
-* CopyOnWriteArrayList (synchronized & fast), 
-* LinkedList, 
-
-Types of Set : 
-* HashSet, 
-* TreeSet (sorted)
-
-Types of Maps : 
-* HashTable (threadsafe/sychoronized and hence slow), 
-* HashMap (fast and not threadsafe), 
-* TreeMap (sorted keys), 
-* ConcurrentHashmap (fast & threadsafe)
-
-Unmodifiable collection:  Make a list unmodifiable by using `Collection.unmodifiable(list)` and similarly make a map unmodifiable by using `Collection.unmodifiable(m)`
-Generics & Type erasure:  Declaring a collection of a specific type (like ArrayList<String>) is the generics way. 
-Type erasure means the runtime erases the type to make the binary compatible with old versions.Generic Wildcard: <? extends T>  means upper bound by T and <? super T> means lower bound by TFailfast & Fail Safe IteratorComparator & Comparable: Comparable interface is implemented by the actual object (say Song) which needs to be compared. The method that needs to be implemented is "compareTo"Comparator interface is implemented by any class. The method that needs to be implemented is "compare" and this method takes 2 arguments corresponding to the objects to be compared. 
-
-Using Comparator is a more flexible way of comparing as the comparing criteria can be easily changed by writing a different comparator.
-HashCode and Equals : The rule to implement hashcode and equals is that - 
-If hashcodes of 2 objects are not same, they are not equal. If hashcodes are same - the 2 objects may or may not be equal. If 2 objects are equal (which means using equals operator return true against 2 objects) their hashcodes must be same.
+So these are some of the reasons for which one can consider alternatives to Java's default serialization. Will be discussed in another blog.
