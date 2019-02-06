@@ -1,6 +1,6 @@
 |layout|title|date|categories|
 |---|---|---|---|
-|post|"Some EJB fundamentals"|2017-10-20 16:55:23 +0530|jekyll update| 
+|post|"Some EJB fundamentals"|2017-10-20 16:55:23 +0530|Java| 
 
 
 # Session beans
