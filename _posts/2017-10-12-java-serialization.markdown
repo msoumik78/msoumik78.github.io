@@ -1,6 +1,9 @@
-|layout|title|date|categories|
-|---|---|---|---|
-post|"Java's default serialization"|2017-08-22 16:55:23 +0530|Java| 
+---
+layout: post
+title: "Java's default Serialization"
+date: 2017-10-12 16:55:23 +0530
+categories: Java
+---
 
 ### Serialization
 
