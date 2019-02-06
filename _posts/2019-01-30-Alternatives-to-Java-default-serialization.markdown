@@ -1,6 +1,9 @@
-|layout|title|date|categories|
-|---|---|---|---|
-post|"Alternatives to Java's default serialization"|2019-01-30 16:55:23 +0530|Java| 
+---
+layout: post
+title: "Alternatives to Java's default Serialization"
+date: 2019-01-30 16:55:23 +0530
+categories: Java
+---
 
 ### Alternatives to Java's default Serialization
 I have already discussed in one of my past blogs on how implementing default serialization in Java is a just a breeze. We just need to implement a marker interface and then the JVM does all the magic of serialization in the background. But this comes at a significant performance cost.
