@@ -1,6 +1,6 @@
 |layout|title|date|categories|
 |---|---|---|---|
-|post|"Some OO Design patterns"|2017-10-20 16:55:23 +0530|jekyll update| 
+|post|"Some OO Design patterns"|2017-10-20 16:55:23 +0530|Design Patterns| 
 
 
 # Creational Patern
