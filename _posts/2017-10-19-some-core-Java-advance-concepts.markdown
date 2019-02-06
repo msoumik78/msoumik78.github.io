@@ -1,6 +1,9 @@
-|layout|title|date|categories|
-|---|---|---|---|
-|post|"Some advanced ore Java Fundamentals"|2017-08-22 16:55:23 +0530|Java| 
+---
+layout: post
+title: "Core Java concepts"
+date: 2017-10-19 16:55:23 +0530
+categories: Java
+---
 
 # Java RMI (Remote Method Invocation)
 
