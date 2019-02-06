@@ -1,6 +1,6 @@
 |layout|title|date|categories|
 |---|---|---|---|
-post|"Scala concepts"|2017-08-22 16:55:23 +0530|jekyll update| 
+post|"Scala concepts"|2017-08-22 16:55:23 +0530|Big Data| 
 
 # Scala Concepts
 
