@@ -4,7 +4,7 @@ post|"Java's default serialization"|2017-08-22 16:55:23 +0530|jekyll update|
 
 ### Serialization
 
-Serialization is the process of converting in-memory objects to bytestream for either storing the data in persistent storage (like filesystem) or passing the data across network (as in RPC calls). De-serialization is the reverse process of converting the bytestream back to Java in-memory objects. Serialization / De-serialization is frequently involved in distributed computing technologies like RMI , EJB and nowadays in Hadoop eco system. This blog discusses about various ways in which one can attempt serialization/ de-serialization. 
+Serialization is the process of converting in-memory objects to bytestream for either storing the data in persistent storage (like filesystem) or passing the data across network (as in RPC calls). De-serialization is the reverse process of converting the bytestream back to Java in-memory objects. Serialization / De-serialization is frequently involved in distributed computing technologies like RMI , EJB and nowadays in Hadoop eco system. This blog discusses about Java's default serialization and its limitations and then I have another blog which discusses the alternative options to Java's default serialization. 
 
 #### Java's default serialization
 One can mark an object to be serializable just by just implementing the *marker* Serializable interface. That's it and the developer does not need to do anything else! This single declaration will ensure that Java's default serialization will kick in once you want to serialize the object. 
