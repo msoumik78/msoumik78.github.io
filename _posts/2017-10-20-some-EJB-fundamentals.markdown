@@ -1,6 +1,9 @@
-|layout|title|date|categories|
-|---|---|---|---|
-|post|"Some EJB fundamentals"|2017-10-20 16:55:23 +0530|Java| 
+---
+layout: post
+title: "EJB fundamentals"
+date: 2017-10-20 14:55:23 +0530
+categories: Java
+---
 
 
 # Session beans
