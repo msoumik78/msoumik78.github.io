@@ -2,7 +2,7 @@
 layout: post
 title: "R fundamentals"
 date: 2017-10-18 16:55:23 +0530
-categories: "Data Science"
+categories: DataScience
 ---
 
 # R Fundamentals
