@@ -2,7 +2,7 @@
 layout: post
 title: "Scala fundamentals"
 date: 2017-10-17 16:55:23 +0530
-categories: "Big data"
+categories: BigData
 ---
 
 # Scala Concepts
