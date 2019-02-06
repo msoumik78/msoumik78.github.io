@@ -1,6 +1,6 @@
 |layout|title|date|categories|
 |---|---|---|---|
-|post|"Some advanced ore Java Fundamentals"|2017-08-22 16:55:23 +0530|jekyll update| 
+|post|"Some advanced ore Java Fundamentals"|2017-08-22 16:55:23 +0530|Java| 
 
 # Java RMI (Remote Method Invocation)
 
