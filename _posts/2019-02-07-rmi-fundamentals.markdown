@@ -1,6 +1,6 @@
-|layout|title|date|categories|
-|---|---|---|---|
-|post|"RMI Fundamentals"|2019-02-07 16:55:23 +0530|Java| 
+layout: post
+title: RMI fundamentals
+categories: Java
 
 # Java RMI (Remote Method Invocation)
 
