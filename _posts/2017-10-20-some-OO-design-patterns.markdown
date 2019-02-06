@@ -1,6 +1,9 @@
-|layout|title|date|categories|
-|---|---|---|---|
-|post|"Some OO Design patterns"|2017-10-20 16:55:23 +0530|Design Patterns| 
+---
+layout: post
+title: "Some OO Design patterns"
+date: 2017-10-20 16:55:23 +0530
+categories: Design
+---
 
 
 # Creational Patern
