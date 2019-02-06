@@ -2,7 +2,7 @@
 layout: post
 title: Hadoop Fundamentals
 date: 2017-10-10 16:55:23 +0530
-categories: "Big Data"
+categories: BigData
 ---
 
 
