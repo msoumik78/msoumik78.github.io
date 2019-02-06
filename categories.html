@@ -3,13 +3,16 @@ layout: page
 permalink: /categories/
 title: Categories
 ---
-### Now trying to retrieve categories 2
+### Now trying to retrieve categories 3
 
 <ul>
-{% for blog in site.post %}
- <li>
-   <a href="">Title: {{blog.title }} , Date: {{blog.date }}, Category : {{blog.categories }}</a>
-   <p>{{blog.meta }}</p>   
-  </li> 
+{% for category in site.categories %}
+  <li><a name="{{ category | first }}">{{ category | first }}</a>
+    <ul>
+    {% for post in category.last %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+  </li>
 {% endfor %}
 </ul>
