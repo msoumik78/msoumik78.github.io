@@ -2,7 +2,7 @@
 layout: post
 title:  "Why use LESS"
 date:  2017-10-07 16:55:23 +0530
-categories:  jekyll update
+categories:  "Frontend"
 ---
 
 # LESS 
