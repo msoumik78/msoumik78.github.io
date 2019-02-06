@@ -2,7 +2,7 @@
 layout: post
 title:  "Modern day HTML5 quickstart"
 date:   2017-09-11 16:55:23 +0530
-categories: jekyll update
+categories: "Frontend"
 ---
 
 # HTML5 Fundamentals
