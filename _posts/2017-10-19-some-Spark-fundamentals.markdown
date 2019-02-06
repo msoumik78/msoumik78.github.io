@@ -2,7 +2,7 @@
 layout: post
 title: "Spark concepts"
 date: 2017-10-19 14:55:23 +0530
-categories: "Big Data"
+categories: BigData
 --- 
 
 
