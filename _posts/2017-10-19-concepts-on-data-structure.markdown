@@ -1,6 +1,6 @@
 |layout|title|date|categories|
 |---|---|---|---|
-|post|"Data Structure Concepts"|2017-10-19 12:30:00 +0530|jekyll update| 
+|post|"Data Structure Concepts"|2017-10-19 12:30:00 +0530|DS & Algo| 
 
 
 # Lists
