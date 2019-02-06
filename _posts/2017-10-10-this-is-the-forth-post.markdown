@@ -2,7 +2,7 @@
 layout: post
 title: "What is Memcache"
 date: 2017-10-10 16:55:23 +0530
-categories: jekyll update
+categories: NoSQL
 ---
 
 # What is Memcache ?
