@@ -1,6 +1,9 @@
-|layout|title|date|categories|
-|---|---|---|---|
-|post|"Sprk Concepts"|2017-10-18 10:30:00 +0530|Big Data| 
+---
+layout: post
+title: "Spark concepts"
+date: 2017-10-19 14:55:23 +0530
+categories: "Big Data"
+--- 
 
 
 # Spark Core
