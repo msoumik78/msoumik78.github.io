@@ -1,6 +1,9 @@
-|layout|title|date|categories|
-|---|---|---|---|
-post|"Scala concepts"|2017-08-22 16:55:23 +0530|Big Data| 
+---
+layout: post
+title: "Scala fundamentals"
+date: 2017-10-17 16:55:23 +0530
+categories: "Big data"
+---
 
 # Scala Concepts
 
