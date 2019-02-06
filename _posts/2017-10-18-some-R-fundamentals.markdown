@@ -1,6 +1,6 @@
 |layout|title|date|categories|
 |---|---|---|---|
-|post|"R Concepts"|2017-10-18 10:30:00 +0530|jekyll update| 
+|post|"R Concepts"|2017-10-18 10:30:00 +0530|Data Science| 
 
 # R Fundamentals
 
