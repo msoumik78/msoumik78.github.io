@@ -1,6 +1,6 @@
 |layout|title|date|categories|
 |---|---|---|---|
-|post|"Sprk Concepts"|2017-10-18 10:30:00 +0530|jekyll update| 
+|post|"Sprk Concepts"|2017-10-18 10:30:00 +0530|Big Data| 
 
 
 # Spark Core
