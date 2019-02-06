@@ -1,6 +1,9 @@
-|layout|title|date|categories|
-|---|---|---|---|
-|post|"Data Structure Concepts"|2017-10-19 12:30:00 +0530|DS & Algo| 
+---
+layout: post
+title: "Data Structures"
+date: 2019-02-07 16:55:23 +0530
+categories: "DS & Algo"
+---
 
 
 # Lists
