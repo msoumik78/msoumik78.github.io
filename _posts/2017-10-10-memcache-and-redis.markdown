@@ -86,3 +86,12 @@ SADD friends Bumba
 SADD friends Manoj
 
 {% endhighlight %}
+
+
+### Ehcache vs Memcache vs Redis
+
+EhCache is probably the most favourite and widely used caching system for Java developers. If your requirement is that, the caching system will only be accessible from java based systems, EhCache is probably the way to go.
+However if you want to setup a standalone but simple caching engine which can be leveraged by various applications (Java and non Java apps like NodeJs/ PHP/Python) within the enterprise landscape, you can go for Memcache.
+Redis scenario is similar to memcache but even more flexible. So probably redis usage is recommended when you can possibly want to persist the cache from time to time (or even leverage redis as the primary data store) or you have a messaging requirement as well. Like memcache, Redis is also a distributed system which can be leveraged by various Java & Non Java based applications in the enterprise landscape. 
+
+*Will try to cover redis based messaging in a different blog and compare it with Apache ActiveMQ / RabitMQ*
