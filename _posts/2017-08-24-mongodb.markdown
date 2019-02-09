@@ -17,11 +17,30 @@ you can go ahead and store documents in collections without even creating the co
 ## Typical CRUD syntax in MongoDB
 
 Following are the useful CRUD commands: 
-* db.collectionName.find () : Uses the operator $eq, $ne, $gt, $gte, $lt, $lte, $or
-Example : db.employees.name (title : “Gupta” $or designation : SA)
-Find command also takes an optional second argument which is used to specify the projection :Example : db.collectionName.find ( , {title:1, Name :0})It means only title will be displayed.
-Also number of rows returned can be limited by using the command : db.collectionName.find(). Limit (5)
-Also the result can be sorted by using the command : db.collectionName.find().sort (“title:1” , “Name : -1”)This means the resultset will be sorted by title in ascending order and name in descending order.
+* db.collectionName.find () : This is the command to fetch documents from MongoDB abd its 
+{% highlight ruby %}
+
+// First query below finds employees with title Gupta and second query finds employees who are managers
+// Sql equivalent of the first query: Select * from employees where title = "Gupta"
+// Sql equivalent of the second query: Select * from employees where designation = "Manager"
+db.employees.find("title":"Gupta") 
+db.employees.find("designation":"Manager")
+ 
+
+// One can also select specific columns instead of all columns 
+// Sql equivalent : Select name, age from employees where title = "Gupta"
+db.employees.find("title":"Gupta" , {name: 1, age:1}) 
+
+// One can also limit specific rows 
+// Sql equivalent : Select name, age from employees where title = "Gupta" LIMIT 5
+db.employees.find("title":"Gupta" , {name: 1, age:1}).limit(5) 
+
+// One can also sort the output 
+// Sql equivalent : Select * employees order by title ASC name DESC
+db.employees.find.sort("title":"1" , "name" : "-1") 
+
+{% endhighlight %}
+
 * db.collectionName.insert ()
 * db.collectioName.update (, $set )First argument is used to identify the document and second argument after $set to set the data.
 * db.collectionName.remove()
