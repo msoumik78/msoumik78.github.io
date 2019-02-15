@@ -27,15 +27,25 @@ Most frequently used commands for retrieving data from the cache :
 
 The command that can be used to retrieve the statistics is  *STATS*
 
-Following is some code snippets to set and retrieve values from memcache:
+Following is some code snippets to connect to memcache server and then set and retrieve values from memcache:
 {% highlight ruby %}
-set w3big 0 900 9
-memcached
+
+//Normally we have to use telnet protocol to connect to memcache
+$telnet 127.0.0.1 11211
+Trying 127.0.0.1...
+Connected to 127.0.0.1.
+Escape character is '^]'.
+
+// Below command sets the value 'Soumik' against the key 'name'. Also expiration time of the cache is set to 900 secs. The 
+// command returns STORED indicating that the value was indeed stored successfully. 
+set name 0 900 9
+Soumik
 STORED
 
-get w3big
-VALUE w3big 0 9
-memcached
+// Below command retrieves the value set against the key 'name'
+get name
+VALUE name 0 9
+Soumik
 {% endhighlight %}
 
 In Java – **SpyMemcached** Client is most popularly used to get / set data with memcached (It returns a Future object post the get / set operation). Following is some representative Java code snippet to connect to memcache from java:
