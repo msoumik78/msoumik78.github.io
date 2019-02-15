@@ -41,8 +41,35 @@ db.employees.find.sort("title":"1" , "name" : "-1")
 
 {% endhighlight %}
 
-* db.collectionName.insert ()
-* db.collectioName.update (, $set )First argument is used to identify the document and second argument after $set to set the data.
+* db.collectionName.insert() - Following are some code snippets:
+
+{% highlight ruby %}
+
+// First one below is a single insert statement and the second one is a multi insert (batch insert)
+db.employees.insert({name:"Soumik",age:"40", specialities: ["java", "NoSql", "AWS"], physique: {height:"170", weight:"70"} }) 
+db.employees.insertMany([
+{name:"Rahul",age:"34", specialities: ["java"], physique: {height:"170", weight:"70"} },
+{name:"Agni",age:"30", specialities: ["NoSql"], physique: {height:"170", weight:"70"} },
+{name:"Suny",age:"38", specialities: ["NoSql"], physique: {height:"170", weight:"70"} }
+ ])
+ 
+// Speciality of MongoDB is that it allows one to store the following data in a cell:
+// a) Single value (just like RDBMS) , b) An array of values (within a [] bracket) like the 'specialities' column above , c) a nested structure 
+// which is like the 'physique' column above
+// Below is the MongoDB find statement which finds out all employees with height greater than 150
+// See how a nested field 'physique' is referenced using the dot notation
+db.employees.find({ "physique.height" : { $gt: 150 }}) 
+ 
+{% endhighlight %}
+ 
+* db.collectioName.update(, $set ) - First argument is used to identify the document and second argument after $set to set the data.
+{% highlight ruby %}
+
+// Update query which sets the age of employee named Soumik to make his age 41 
+db.employees.update({name:"Soumik"},{$set: {age: "41"} }}) 
+
+{% endhighlight %}
+
 * db.collectionName.remove()
 
 
@@ -53,6 +80,6 @@ How to create a sharded cluster in MongoDB
 * Then connect a mongo process to any one instance and issue the commands (rs.initialize() and 
   then rs.add <Second Server> and rs.add <Third Server>
   * After that start the 3 config servers with the command (mongod – configServr -replySet <>
-  * After that start the mongos instance using the command (mongos -cnfigdb ConfigDb1:ConfigDB2:ConfigDB3)
+  * After that start the mongos instance using the command (mongos -configdb ConfigDb1:ConfigDB2:ConfigDB3)
   * After that , start a mongo process and connect to the mongos instance and issue the command 
     (sh.addShard  (rs1/ReplicaInatance1:ReplicaInstance2:ReplicaInatance3)
