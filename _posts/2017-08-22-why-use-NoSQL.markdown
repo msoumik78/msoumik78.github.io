@@ -7,7 +7,7 @@ categories: NoSQL
 
 # Why use NoSQL solution
 
-We are living in the age of data and it grows exponentially
+We are living in the age of data and it is growing exponentially
 in today’s world. Forget data intensive apps or companies like Youtube /
 Facebook – nowadays even small to medium sized enterprises are facing a
 never seen before kind of "data boom". I read somewhere that Facebook CEO Mark
@@ -15,7 +15,7 @@ Zuckerberg had famously said that there are more people on Facebook today than
 the number of people living in the planet some 80 years back !!!
 
 So the question that we are facing now is how do we manage this huge amount of data and also economically store/ retrieve the same. One
-thing is for sure – this huge volume of data can’t be efficiently and economically managed using standard RDBMS solutions. This has given rise to a completely different genre of databases which are commonly referred as *NoSQL databases*. At the moment, there
+thing is for sure – this huge volume of data can’t be efficiently /economically managed using standard RDBMS solutions. This has given rise to a completely different genre of databases which are commonly referred as *NoSQL databases*. At the moment, there
 are 150+ types of NoSQL databases. Although each one of them tends to vary from the other in some way or the other – following are some common properties that can be attributed to all types of NoSQL databases:
 * They don’t support standard ANSI SQL syntax
 * They don't support ACID properties and tranactions
@@ -29,21 +29,13 @@ values or a data structure. Popular examples of this type of database include Me
 
 # Let’s understand CAP Theorem and the debate between Consistency & Availability
 
-Interestingly there is a very good theorem which clearly explains the challenges of a distributed architecture. It is known as CAP
+Interestingly there is a very good theorem which clearly explains the challenges of a distributed architecture. It is known as **CAP**
 theorem. Essentially it states that out of the following 3 properties/characteristics, any database system in the world can honor at most 2 and can never satisfactorily honor all 3. Well, below are the 3 properties/characteristics
 that we were talking about:
-* Consistency (C) – This indicates, whether in a distributed database architecture (where the data is sharded and stored in many
-machines), the database can provide correct (latest) results to all the clients
-querying for results. 
-* Availability (A) – This indicates, whether in a
-distributed database architecture, the database can provide response to all the
-clients querying for results. Although some of the responses can still not be
-latest, a database with a higher availability will still strive to provide some
-response to all of its clients. 
-* Partition Tolerance (P) – This indicates,
-whether in a distributed database architecture, the database system, as a
-whole, can still respond if there are outages / network failures of some of the
-nodes.
+* Consistency (C) – This indicates, whether in a distributed database architecture - the database can provide correct (latest) results to all the clients querying for results. 
+* Availability (A) – This indicates, whether in a distributed database architecture, the database can provide response to all the
+clients querying for results. Although some of the responses can still not be latest, a database with a higher availability will still strive to provide at least a stale response to all of its clients. 
+* Partition Tolerance (P) – This indicates, whether in a distributed database architecture, the database system, as a whole, can still respond if there are outages / network failures of some of the nodes.
 
 As you might have probably guessed, the first 2 characteristics (Consistency & Availability) are often a tradeoff. So
 basically it means that if you want higher consistency, you will have to forego a bit of availability. This means that if you want to show correct response to your clients, it means that may be some clients will not receive response at all but whoever will receive response – they will always get the latest response. Imagine the case of a messaging platform – where consistency is of paramount
