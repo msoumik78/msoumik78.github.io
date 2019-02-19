@@ -23,7 +23,7 @@ Some other important concepts introduced in HTML5 include the following :
                    } 
 {% endhighlight %}
 
-* LocalStorage and SessionStorage - This feature is used by web applications which wnts to store some data in browser memory.  
+* LocalStorage and SessionStorage - This feature is used by web applications which wnts to store some data in browser memory. Representative code snippets for the same: 
 {% highlight ruby %} - 
           if(typeof(Storage) !== "undefined") {
                     localStorage.setItem(“foo”, “bar”);
