@@ -43,23 +43,21 @@ Localstorage / SessionStorage can  store only Strings as key / value pairs, so 
 ### Webworkers
 This helps to execute a javascript task in the background without blocking UI or user actions, sample code snippets below:
 {% highlight ruby %}
-var w;
-function startWorker() {
-    if(typeof(Worker) !== "undefined") {
-          if(typeof(w) == "undefined") {            
-              w = new Worker("demo_workers.js");        
-           }        
-         w.onmessage = function(event) {
-              document.getElementById("result").innerHTML = event.data;
-           };    
-         } else {        
-              document.getElementById("result").innerHTML = "Sorry! No Web Worker support.";
-        }
-}
-
-
-function stopWorker() {     
-    w.terminate();    
-    w = undefined;
-  }
+          var w;
+          function startWorker() {
+              if(typeof(Worker) !== "undefined") {
+                    if(typeof(w) == "undefined") {            
+                        w = new Worker("demo_workers.js");        
+                     }        
+                   w.onmessage = function(event) {
+                        document.getElementById("result").innerHTML = event.data;
+                     };    
+                   } else {        
+                        document.getElementById("result").innerHTML = "Sorry! No Web Worker support.";
+                  }
+               }
+          function stopWorker() {     
+              w.terminate();    
+              w = undefined;
+            }
 {% highlight ruby %}
