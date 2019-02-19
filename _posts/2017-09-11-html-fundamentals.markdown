@@ -60,4 +60,4 @@ This helps to execute a javascript task in the background without blocking UI or
               w.terminate();    
               w = undefined;
             }
-{% highlight ruby %}
+{% endhighlight %}
