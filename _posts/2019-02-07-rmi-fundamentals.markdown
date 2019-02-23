@@ -6,11 +6,11 @@ categories: Java
 ---
 
 # Java RMI (Remote Method Invocation)
-I think some of you are surprised at this post - is Java RMI still relevant in today's world od de-coupled microservices styled architecture ? Well I will share my take on this once towards the end of the post but beofre that, please read on to recap your RMI fundamentals.
+Some of you might be surprised at this post - is Java RMI still relevant in today's world of de-coupled microservices styled architecture ? Well I will share my take on this towards the end of this post but beofre that, please read on to recap the RMI fundamentals.
 
-At its core - RMI is a simplified version of method to method communication between 2 different JVMs and it is technically a simplified version of the CORBA protocol. If you only have Java in your landscape, it makes sense to use RMI over CORBA.
+At its core - RMI is a simplified version of "method to method communication" between 2 different objects deployed in 2 different JVMs and technically, it is indeed a simplified version of the CORBA protocol. If you only have Java in your landscape, it makes sense to use RMI over CORBA. Basically when you call a remote Java method in a different JVM - your JVM serializes all method parameters and send them over the wire to the other JVM, which then de-serializes the object and brings it back on the heap memory and uses this object to call the target method. 
 
-Well, below are the steps to create and deploy a simple RMI program:
+Below are the steps to create and deploy a simple RMI program:
  * Create a Remote interface (by extending the marker Remote interface) and declare a couple of remote methods.
  * Now create a class (say MyRemoteImpl) which extends the UnicastRemoteObject and implement the remote interface that you have created in the previous step. This class needs to implement the methods declared in the above remote interface. Also you can optionally have a main method in the same class. Representative code snippets:
  
@@ -46,4 +46,7 @@ Object o = Naming.lookup("rmi://localhost/RemoteX");
 
 # RMI vs REST styled web services
 
-Well my take is that for internal communication within a Java based enterprise - one should use RMI as you can stay completely within the Java world. A couple of disadvantages would be strong coupling and monolithic application. However if you want to have a client facing application for clients over internet - you should go for REST styled micro services architecture.
+Well my take is that **for internal communication within a Java based enterprise - one can leverage RMI as then he can stay completely within the Java world. This is the major advantage - with RMI programming, calling remote method is as good as calling local methods excepting the fact that you will have to catch a RemoteException. The RMI technology has encapsulated all the marshalling and unmarshalling (which happens under the hood) when you call a remote method and has made this RPC calls very easy.**
+A couple of disadvantages of RMI based architecture would obviously be strong coupling (you need the same version of the class across JVMs) and a monolithic architecture (you only can stay within Java world). 
+
+But **if you want to have a client facing application with clients over internet - the common wisdom in today's world is to go for a REST/JSON styled micro services architecture.**
