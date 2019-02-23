@@ -35,10 +35,10 @@ values or a data structure. Popular examples of this type of database include Me
 Interestingly there is a very good theorem which clearly explains the challenges of a distributed architecture. It is known as **CAP**
 theorem. Essentially it states that out of the following 3 properties/characteristics, any database system in the world can honor at most 2 and can never satisfactorily honor all 3. Well, below are the 3 properties/characteristics
 that we were talking about:
-* Consistency (C) – This indicates, whether in a distributed database architecture - the database can provide correct (latest) results to all the clients querying for results. 
-* Availability (A) – This indicates, whether in a distributed database architecture, the database can provide response to all the
+* **Consistency (C)** – This indicates, whether in a distributed database architecture - the database can provide correct (latest) results to all the clients querying for results. 
+* **Availability (A)** – This indicates, whether in a distributed database architecture, the database can provide response to all the
 clients querying for results. Although some of the responses can still not be latest, a database with a higher availability will still strive to provide at least a stale response to all of its clients. 
-* Partition Tolerance (P) – This indicates, whether in a distributed database architecture, the database system, as a whole, can still respond if there are outages / network failures of some of the nodes.
+* **Partition Tolerance (P)** – This indicates, whether in a distributed database architecture, the database system, as a whole, can still respond if there are outages / network failures of some of the nodes.
 
 *As you might have probably guessed, the first 2 characteristics (Consistency & Availability) are often a tradeoff. So
 basically it means that if you want higher consistency, you will have to forego a bit of availability. This means that if you want to show correct response to your clients, it means that may be some clients will not receive response at all but whoever will receive response – they will always get the latest response. Imagine the case of a messaging platform – where consistency is of paramount
