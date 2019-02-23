@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Some OO Design patterns"
+title: "Creational OO Design Patterns"
 date: 2017-10-20 16:55:23 +0530
 categories: Design
 ---
@@ -33,7 +33,7 @@ However synchronizing all access to the getInstance() method can degrade perform
 * Another option is to do an early loading of the _instance variable in a static initializer before any client calls.
 * Another option is to use Enum to implement Singleton
 
-Factory - This design pattern encapsulates object creation and below are the variants:
+Factory - This design pattern encapsulates object creation. It is very important to seperate the object creation from object usage so that both of them can vary independently.Below are the variants of the factory pattern (In fact Spring framework is one of the most popular implementations of the Factory design pattern):
 * Normal Factory - This is just a method which encapsulates object creation and hides all object creation details from the client. 
 Spring IoC is a classic example.
 * Factory Method - Defines an abstract method in the superclass and lets the subclass to implement the method (inheritance way)
@@ -50,31 +50,3 @@ Prototype - This pattern is used to create an exact clone if creation of an obje
 The object class contains the clone() method but one should also implement the marker Cloneable interface. It copies only primitive fields and not object references.b) Deep copy - this means that the entire object tree has to be cloned. This does not come out of box but Java serialization and deserialization can be used to implement this.
 
 
-# Structural Pattern
-
-Decorator - In this pattern, additional responsibilities are attached to a class dynamically at runtime. Ideally a decorator implementation should have the decorator interface as an object instance variable. Java I/O contains ample examples of decorators. Below is the code snippet:
-
-{% highlight ruby %}
- public class DecoratorI {    
-    public String description();    
-    public float cost(); 
-  }
- 
- public class ConcreteDecorator1 implements Decorator1 {    
-      private DecoratorI decI;    
-      public void ConcereteDcorator1(DecoratorI dec){        
-          decI = dec;    
-       }  
-    public String description() {        
-      return "Concere Decorator1" + decI.description();        
-    }    
-    
-    public float cost(); {         
-      return x + decI.cost();        
-   } }
-
-{% endhighlight %}
-
-Adapter - This pattern is used to implement a specific interface (which the client calls) and in turn delegates call to a different method. Following are the types:a) Object Adapter - b) Class Adapter - 
-Facade - Provides a single unified interface instead of making a lot of calls to all granular level methods.
-Proxy- Essentially a layer between the client and the server and can be of the following types:a) Remote - Java RMI / EJB's stubs / skeletons are classic examplesb) Virtual - If the actual object is heavy (like an image) a virtual proxy can be usedc) Protection proxy - Typically corporate firewalls are examples
