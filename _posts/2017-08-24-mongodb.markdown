@@ -9,14 +9,15 @@ categories: NoSQL
 
 MongoDB
 is one of the most popular document oriented databases which is a major type of NoSQL database.  The document oriented databases closely resemble RDBMS in the sense that the data is stored in form of documents (which are similar to rows in RDBMS) and the 
-documents are stored in collections (which are similar to tables in RDBMS). The biggest difference with RDBMS is that the documents are indeed meant for storing semi structured data and also the documents are completely schema free. This means that in MongoDB
-you can go ahead and store documents in collections without even creating the collection in the first place. This also means that MongoDb insert operations are muchfaster than corresponding insert operations of RDBMS.
+documents are stored in collections (which are similar to tables in RDBMS). **The biggest difference with RDBMS is that the documents are indeed meant for storing semi structured data and also the documents are completely schema free. This means that in MongoDB
+you can go ahead and store documents in collections without even creating the collection in the first place.** 
 
+This also means that MongoDb insert operations are much faster than corresponding insert operations of RDBMS.
 
 
 ## Typical CRUD syntax in MongoDB
 
-Following are the useful CRUD commands: 
+Following are the useful CRUD commands of MongoDB: 
 * db.collectionName.find () : This is the command to fetch documents from MongoDB abd its 
 {% highlight ruby %}
 
@@ -73,13 +74,21 @@ db.employees.update({name:"Soumik"},{$set: {age: "41"} }})
 * db.collectionName.remove()
 
 
+## Some other useful features and commands of MongoDB
+
+
 ## MongoDB Replication & Sharding
 
-How to create a sharded cluster in MongoDB
-* First start mongod process in 3 machines (using the command : mongod -host <> - port 27017 – replySet <> 
+One of the most attractive features of MongoDB is the ease with which one can divide and distribute the data into multiple nodes (known as sharding) and how each part of the data (known as shard) can be duplicated (known as replication).  
+Below are very simple steps to create a sharded cluster in MongoDB
+* First start mongod process in 3 machines (using the command : mongod -host <HostName> - port 27017 – replySet <ReplicaSetName> 
+  Note that 'ReplicaSetName' should be same in all the 3 machines and that's how it can recognize that all 3 are part of the same replica set.
 * Then connect a mongo process to any one instance and issue the commands (rs.initialize() and 
   then rs.add <Second Server> and rs.add <Third Server>
-  * After that start the 3 config servers with the command (mongod – configServr -replySet <>
+   The first command (rs.initialize()) initializes the replica set cluster of MongoDB and the second and third commands respectively add the second and third servers to the cluster.  
+  * After that, start the 3 config servers with the command (mongod – configServr -replySet <ReplicaSetName>
   * After that start the mongos instance using the command (mongos -configdb ConfigDb1:ConfigDB2:ConfigDB3)
   * After that , start a mongo process and connect to the mongos instance and issue the command 
     (sh.addShard  (rs1/ReplicaInatance1:ReplicaInstance2:ReplicaInatance3)
+
+This completes the setup of a sharded replica set of MongoDB.
