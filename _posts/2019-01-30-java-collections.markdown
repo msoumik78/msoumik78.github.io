@@ -39,6 +39,6 @@ Type erasure means the runtime erases the type to make the binary compatible wit
 
 * **Comparator vs Comparable**: Using Comparator is a more flexible way of comparing as the comparing criteria can be easily changed by writing a different comparator.
 * **HashCode and Equals** : The rule to implement hashcode and equals is that - 
-* If hashcodes of 2 objects are not same, they are not equal. 
-* If hashcodes are same - the 2 objects may or may not be equal. 
-* If 2 objects are equal (which means using equals operator return true against 2 objects) their hashcodes must be same.
+  * If hashcodes of 2 objects are not same, they are not equal. 
+  * If hashcodes are same - the 2 objects may or may not be equal. 
+  * If 2 objects are equal (which means using equals operator return true against 2 objects) their hashcodes must be same.
