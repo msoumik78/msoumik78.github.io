@@ -1,0 +1,23 @@
+---
+layout: post
+title: Hadoop : A few points
+date: 2017-10-10 16:55:23 +0530
+categories: BigData
+---
+
+
+# Hadoop Fundamentals
+
+I hope that all of you reading my blog must be knowing about Hadoop and hence this post is not an introduction to Hadoop in general. This post rather assumes that the reader has some basic understanding of distributed system in general and Hadoop in particular. However in fact if you are not familiar with either distributed computing / Hadoop - let me try to explain in a few sentences:
+
+Put very simply, distributed computing is essentially about leveraging multiple computer systems to execute a task. This has several advantages of traditional approach of using a single system. In a distributed system - you can store / exexcute by leveraging the storage, processing power (CPU) and memory (RAM) of multiple machines. It removes single point of failures and helps attain horizontal scalability. It is in fact also a much more cost effective solution than building a single machine with massive capacity (likes of a supercomputer!). Distributed computing was existent much before Hadoop came into being. There were MPP (Massively Parallel Processing) databases like Teradata which also leverages the concepts of distributed computing. Back to Hadoop. Hadoop also leverages distributed computinga nd technically it is comprised of the following components:
+* Multiple datanodes / worker nodes which store data and execute tasks
+* Single master node which controls the data nodes and knows what is stored/ executed in which datanode
+This is a 1000ft overview of Hadoop but I will try to write another blog for Hadoop beginners.
+
+Now coming back to some of the Hadoop features I wanted to discuss in this post. They are as follows:
+* Hadoop standalone mode  - By default, Hadoop is configured to run in a non-distributed or standalone mode, as a single Java process. 
+This means that there are no daemons running and everything runs in a single JVM instance. HDFS is not used.
+
+* Hadoop pseudo distributed mode - In this mode, all the Hadoop daemons run on a single machine, thus simulating a cluster on a small scale. Different Hadoop daemons run as different JVMs, but on a single machine. HDFS is used instead of local FS.
+
