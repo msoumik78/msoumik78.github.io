@@ -74,7 +74,56 @@ db.employees.update({name:"Soumik"},{$set: {age: "41"} }})
 * db.collectionName.remove()
 
 
-## Some other useful features and commands of MongoDB
+## Some other useful/ interesting features and commands of MongoDB
+You can indeed (as an exception) create a collection in MongoDB before you insert documents using the below commands:
+
+{% highlight ruby %}
+// Creates a collection named 'log' which is capped/restricted to the fact that max documents can be either 5000 or max size 5242880 B 
+db.createCollection("log", { capped : true, size : 5242880, max : 5000 } )
+
+//Creates a collection named 'contacts' in MongoDB which has the validations against specific fields
+db.createCollection( "contacts",
+   {
+      validator: { $or:
+         [
+            { phone: { $type: "string" } },
+            { email: { $regex: /@mongodb\.com$/ } },
+            { status: { $in: [ "Unknown", "Incomplete" ] } }
+         ]
+      }
+   }
+)
+{% endhighlight %}
+
+BTW, mongo shell (which is the mongo client) accepts all javascript commands and hence you can wrap multiple MongoDB commands in a .js file and run it as below:
+
+{% highlight ruby %}
+
+// Runs the file 'myjsfile.js' 
+mongo localhost:27017/test myjsfile.js
+
+// However if you are already within the mongo shell, you can just use the load function
+mongo>>load(“myjsFile.js”)
+
+{% endhighlight %}
+
+MongoDB also supports various kinds of indexes and below are some examples (BTW MongoDB has now very strong support for text index, details of which are beyond the scope of this blog but I will try to write a blog on text and geo-spatial index of MongoDB )
+{% highlight ruby %}
+
+//below command retrives all the existing indexes of a collection
+db.<collectionName>.getIndexes()
+
+//below command creates an index on the field named 'age'
+db.<collectionName>.createIndex(“age:1”)
+
+//below command creates a text index on the field named 'subject'
+db.articles.createIndex( { subject: "text" } )
+
+//below command leverages the text index to do text search of the word 'coffee' within the 'subject' column
+db.articles.find( { $text: { $search: "coffee" } } )
+
+{% endhighlight %}
+
 
 
 ## MongoDB Replication & Sharding
