@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hadoop : A few points
+title: Hadoop points
 date: 2017-10-10 16:55:23 +0530
 categories: BigData
 ---
