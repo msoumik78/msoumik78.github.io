@@ -18,15 +18,22 @@ So let us see the most popular ways of object creation in Java:
 
 * **Using Reflection** - This is a dynamic way of object creation where the class name is loaded dynamically at runtime. So unlike the new operator of the first case, the class name is NOT known at compile time. 
 
-Now I have done some experimentation to study and compare the performance differences across all these three methods of object creation. Please refer to the class [ObjectCreationTester](https://github.com/msoumik78/ObjectCreationAndCloning/blob/master/src/main/java/objectCreation/ObjectCreationTester.java) of the same repo. Below is a statistic for your reference:
-***********************************************************************
-Time taken(in ms) to create 10000 objects using new operator : 69
-Time taken(in ms) to create 10000 objects using cloning : 5
-Time taken(in ms) to create 10000 objects using reflection : 44
-***********************************************************************
+Now I have done some experimentation to study and compare the performance differences across all these three methods of object creation. Please refer to the class [ObjectCreationTester](https://github.com/msoumik78/ObjectCreationAndCloning/blob/master/src/main/java/objectCreation/ObjectCreationTester.java) of the same repo. Below is a statistic for your reference:\
+***********************************************************************\
+Time taken(in ms) to create 10000 objects using new operator : 69\
+Time taken(in ms) to create 10000 objects using cloning : 5\
+Time taken(in ms) to create 10000 objects using reflection : 44\
+***********************************************************************\
 
 It clearly indicates that new operator is costliest while cloning operation is fastest and the reflection is actually faster than new operator!
 
 
 
 # Deep copy in Serialization
+
+Another interesting aspect of Java cloning is that by default - the clone() method does shallow copy only whioch means the object references are not replicated but instead - both the original and cloned objects internal object references pointt to the same reference. So in order to overcome this, there are various ways in which we can **properly clone** nested objects also, this approiach is known as **deep copy**. Below are some ways in which the same can be achieved:
+
+* Normal serialization which means writing the object to a disc and then reading it from the disc
+* In memory serialization
+* Using Apache's SerializationUtils class
+
