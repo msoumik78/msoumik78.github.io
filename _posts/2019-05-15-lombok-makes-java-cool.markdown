@@ -31,7 +31,7 @@ Below is a basic example of a lombok annotated class:
 @Setter
 @ToString
 @EqualsAndHashcode
-@@AllArgsConstructor
+@AllArgsConstructor
 public class Employee {
  private String empId;
  private String empFirstName;
