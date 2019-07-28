@@ -17,9 +17,30 @@ For the uninitiated - Project lombok has introduced some really **cool annotatio
 
 * **@ToString** - It generates the toString() implementation as per standard conventions. 
 
-* **@Equals** - It generates the equals() implementation as per standard conventions.
+* **@EqualsAndHashcode** - It generates the equals() and hashcode() implementation as per standard conventions.
 
-* **@Hashcode** - It generates the hashcode() implementation as per standard conventions.
+* **@NoArgsConstructor, @RequiredArgsConstructor and @AllArgsConstructor** - It generates all the necessary constructors as per standard conventions.
 
-There are 
+There are in fact a couple of alternatives to Lombok and they are [Autovalue](https://github.com/google/auto/tree/master/value) and [Immutables](http://immutables.github.io/) and they also operate by the way of annotating source classes. But the biggest difference between Lombok and Autovalue/Immutables is the fact that Lombok annotation parser directly generates the class file from the source while Autovalue/Immutables's annotation parsers generate the enhanced classes (with the additional boiler plate code and with a different class name) and then you can compile the sources. **This is why I like Lombok's approach as it does not generate another cluttered source file and hence its actually a better way (in my opinion) to write cleaner code which is free of all boiler plate.**
+
+Below is a basic example of a lombok annotated class:
+
+{% highlight ruby %}
+
+@Getter
+@Setter
+@ToString
+@EqualsAndHashcode
+@@AllArgsConstructor
+public class Employee {
+ private String empId;
+ private String empFirstName;
+ private String empLstName;
+ private String empDesignation;
+ private String empDepartment;
+ private double empMonthlyGross;
+ private double empAge;
+ }
+
+{% endhighlight %}
 
