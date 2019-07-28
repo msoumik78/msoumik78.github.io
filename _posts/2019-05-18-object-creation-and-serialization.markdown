@@ -17,12 +17,11 @@ So let us see the most popular ways of object creation in Java:
 * **Using cloning** - This is a very easy and quick way to copy the content of one object exactly as-is into another object of the same class type.
 
 * **Using Reflection** - This is a dynamic way of object creation where the class name is loaded dynamically at runtime. So unlike the new operator of the first case, the class name is NOT known at compile time. 
-
 Now I have done some experimentation to study and compare the performance differences across all these three methods of object creation. Please refer to the class [ObjectCreationTester](https://github.com/msoumik78/ObjectCreationAndCloning/blob/master/src/main/java/objectCreation/ObjectCreationTester.java) of the same repo. Below is a statistic for your reference:  
 -----------------------------------------------------------------------  
-Time taken(in ms) to create 10000 objects using new operator : 69  
-Time taken(in ms) to create 10000 objects using cloning : 5  
-Time taken(in ms) to create 10000 objects using reflection : 44  
+Time taken(in ms) to create 10000 objects using new operator : 33  
+Time taken(in ms) to create 10000 objects using cloning : 3     
+Time taken(in ms) to create 10000 objects using cloning : 27     
 -----------------------------------------------------------------------  
 
 It clearly indicates that new operator is costliest while cloning operation is fastest and the reflection is actually faster than new operator!
