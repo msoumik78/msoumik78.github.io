@@ -50,6 +50,7 @@ Below is an example of how the class has been unit tested, a few points to note 
 			verify(customerDAO.times(0)).save();
 		}	
 		
+		@Test
 		public boolean testSaveCustomer_whenCustomerIsValid() {
 			doNothing().when(customerDAO.save(customer));
 			customerService.saveCustomer(customer);
@@ -61,28 +62,35 @@ Below is an example of how the class has been unit tested, a few points to note 
 
 
 * **Integration testing** - This is the second level of testing where several layers of the application are tested in one shot. So if we look at the previous example, for integration testing, mocks are never created. 
-Some aspects of integration testing are as follows:
-* Nothing is mocked
-* the application is tested almost end to end - hence you will see in the below example that the DAO layer is instantiated and not tested. Often in IT tests
 
+Below is an example where the same class is subject to integration testing but before you see the below code - please review the below interesting features:
+* Nothing is mocked
+* the application is tested almost end to end - hence you will see in the below example that the DAO layer is actually instantiated and record is inserted during test. And finally its verified from the database (in method *checkIfCustomerIsInsertedInDB*) if the record has been actually inserted.
 {% highlight ruby %}
 	public class ITTestCustomerService {
 		
+		@Test
 		public boolean testSaveCustomer_whenCustomerIsValid() {
 			CustomerDAO customerDAO = new CustomerDAO();
-			Customer cutomer = new Customer ();
+			Customer customer = new Customer ();
 			customer.build.firestName("Soumik").lastName("Mukherjee").profession("Java Architect");
-			boolean result = customerService.saveCustomer(customer);
-			assertTrue(result);
+			customerService.saveCustomer(customer);
+			assertTrue(checkIfCustomerIsInsertedInDB(checkIfCustomerIsInsertedInDB));
 		}	
 		
+		@Test
 		public boolean testSaveCustomer_whenCustomerAlreadyExists () {
 			CustomerDAO customerDAO = new CustomerDAO();
-			Customer cutomer = new Customer ();
+			Customer customer = new Customer ();
 			customer.build.firestName("Soumik").lastName("Mukherjee").profession("Java Architect");
 			boolean result = customerService.saveCustomer(customer);
-			assertFalse(result);
-		}			
+			assertFalse(checkIfCustomerIsInsertedInDB(checkIfCustomerIsInsertedInDB));
+		}		
+		
+		private boolean checkIfCustomerIsInsertedInDB(Customer customer){
+		..........
+		// logic to go in DB and check whether the customer is inserted
+		}
 		
 	}
 {% endhighlight %}
