@@ -43,6 +43,7 @@ Below is an example of how the class has been unit tested, a few points to note 
 		@Mock
 		private Customer customer;
 	
+		@Test
 		public boolean testSaveCustomer_whenCustomerIsNull() {
 			Customer cust = null;
 			customerService.saveCustomer(cust);
@@ -60,11 +61,15 @@ Below is an example of how the class has been unit tested, a few points to note 
 
 
 * **Integration testing** - This is the second level of testing where several layers of the application are tested in one shot. So if we look at the previous example, for integration testing, mocks are never created. 
+Some aspects of integration testing are as follows:
+* Nothing is mocked
+* the application is tested almost end to end - hence you will see in the below example that the DAO layer is instantiated and not tested. Often in IT tests
 
 {% highlight ruby %}
 	public class ITTestCustomerService {
 		
 		public boolean testSaveCustomer_whenCustomerIsValid() {
+			CustomerDAO customerDAO = new CustomerDAO();
 			Customer cutomer = new Customer ();
 			customer.build.firestName("Soumik").lastName("Mukherjee").profession("Java Architect");
 			boolean result = customerService.saveCustomer(customer);
@@ -72,6 +77,7 @@ Below is an example of how the class has been unit tested, a few points to note 
 		}	
 		
 		public boolean testSaveCustomer_whenCustomerAlreadyExists () {
+			CustomerDAO customerDAO = new CustomerDAO();
 			Customer cutomer = new Customer ();
 			customer.build.firestName("Soumik").lastName("Mukherjee").profession("Java Architect");
 			boolean result = customerService.saveCustomer(customer);
