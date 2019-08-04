@@ -85,5 +85,4 @@ public class OCPTester {
 
 {% endhighlight %}
 
-
-
+So essentially what we have done is that we have moved out the logic to the corresponding sub classes where it should ideally reside.
