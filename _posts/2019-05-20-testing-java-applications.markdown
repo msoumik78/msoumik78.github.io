@@ -19,16 +19,16 @@ Below is an example of a sample Service layer class in which the DAO layer class
 	
 		public boolean saveCustomer(Customer customerDAO) {
 			if (null != customer) return false;
-			customerDAO.save(customer);
+			return customerDAO.save(customer);
 		}	
 	}
 {% endhighlight %}
 
 
 Below is an example of how the class has been unit tested, a few points to note here:
-* Creation of mock object of the DAO layer
-* 
-
+* Creation of mock object of the DAO layer - mock objects are just dummy objects
+* 2 different test cases corresponding to one where passed customer object is null and other where it is not null
+* Verification at the end, for the first case - it should confirm that DAO layer is not called and for the second case it is confirmed that the DAO layer is called once (*doNothing ensures that nothing happens on the mock object when the DAO layer method is called*) 
 
 {% highlight ruby %}
 	@RunWith(MockitoJUnitRunner.class)
@@ -39,18 +39,48 @@ Below is an example of how the class has been unit tested, a few points to note 
 		
 		@Mock
 		private CustomerDAO customerDAO;
+		
+		@Mock
+		private Customer customer;
 	
 		public boolean testSaveCustomer_whenCustomerIsNull() {
-			Customer customer = null;
-			customerService.saveCustomer(customer);
+			Customer cust = null;
+			customerService.saveCustomer(cust);
 			verify(customerDAO.times(0)).save();
 		}	
+		
+		public boolean testSaveCustomer_whenCustomerIsValid() {
+			doNothing().when(customerDAO.save(customer));
+			customerService.saveCustomer(customer);
+			verify(customerDAO.times(1)).save();
+		}				
 	}
 {% endhighlight %}
 
 
 
-* **Integration testing** - This is the second level of testing where several layers of the application are tested in one shot which means a request is 
+* **Integration testing** - This is the second level of testing where several layers of the application are tested in one shot. So if we look at the previous example, for integration testing, mocks are never created. 
+
+{% highlight ruby %}
+	public class ITTestCustomerService {
+		
+		public boolean testSaveCustomer_whenCustomerIsValid() {
+			Customer cutomer = new Customer ();
+			customer.build.firestName("Soumik").lastName("Mukherjee").profession("Java Architect");
+			boolean result = customerService.saveCustomer(customer);
+			assertTrue(result);
+		}	
+		
+		public boolean testSaveCustomer_whenCustomerAlreadyExists () {
+			Customer cutomer = new Customer ();
+			customer.build.firestName("Soumik").lastName("Mukherjee").profession("Java Architect");
+			boolean result = customerService.saveCustomer(customer);
+			assertFalse(result);
+		}			
+		
+	}
+{% endhighlight %}
+
 
 * **Functional testing** - This is the last and final level of testing where the application is tested end-to-end (usuually from the UI perspective) and 
 using some UI testing automation tool (like Selenium)
