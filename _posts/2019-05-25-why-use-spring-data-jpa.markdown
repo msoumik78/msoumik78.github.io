@@ -41,6 +41,5 @@ public class Customer {
 
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
 }
-
 {% endhighlight %}
-* With this much code - it is ready to execute basic CRUD commands. 
+* With this much code - it is ready to execute basic CRUD commands. Let us see the code snippets from the service layer 
