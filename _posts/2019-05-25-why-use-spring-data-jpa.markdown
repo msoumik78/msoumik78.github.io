@@ -43,3 +43,28 @@ public interface CustomerRepository extends CrudRepository<Customer, Long> {
 }
 {% endhighlight %}
 * With this much code - it is ready to execute basic CRUD commands. Let us see the code snippets from the service layer 
+{% highlight ruby %}
+public class CustomerService {
+	@Autowired
+	private CustomerRepository customerRepository;
+
+	public void addCustomer(Customer customer){
+		customerRepository.save(customer);
+	}
+
+{% endhighlight %}
+* So with this, our code is ready to at least invoke the basic CRUD methods (findAll, delete, save ) and without any boilerplata code.
+* What is even more interesting is that with more change requests focussing on this project, we can 
+{% highlight ruby %}
+public interface CustomerRepository extends CrudRepository<Customer, Long> {
+	List<Customer> findByLastName(String lastName);
+
+	List<Customer> findByCountryAndLanguage(String country, String language);
+
+	List<Customer> findByAgeGreaterThan(int age);
+}
+{% endhighlight %}
+
+A couple of interesting things to note here:
+* As long as we follow simple naming convention, we really do not need to right any boiler plate code for queries
+* The code is very clean and without any clutter which is normally the case only when we develop completely in house
