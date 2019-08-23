@@ -14,4 +14,33 @@ The answer to the last question is yes - we indeed still need a JPA implementati
 
 Spring data JPA is **NOT an alternate** to Hibernate - we still need a JPA implementation like Hibernate. But our basic boiler plate code for a CRUD functionality is drastically reduced if we spring data JPA.
 
-Let us see with a small example:
+Let us see with a small example taken from my Github project [SpringDataJPAWithoutBoot](https://github.com/msoumik78/springDataJpaWithoutSpringBoot) for this. Below are the steps required to create a spring-data jpa based project:
+* First create the JPA entity class with Lombok annotation for getter and setter:
+{% highlight ruby %}
+
+@Getter
+@Setter
+@ToString
+@Entity
+public class Customer {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String firstName;
+	private String lastName;
+	private int age;
+	private double monthlySalary;
+	private String country;
+	private String language;
+}
+
+{% endhighlight %}
+
+* Create a repository interface by extending the CRUDRepository interface:
+{% highlight ruby %}
+
+public interface CustomerRepository extends CrudRepository<Customer, Long> {
+}
+
+{% endhighlight %}
+* With this much code - it is ready to execute basic CRUD commands. 
