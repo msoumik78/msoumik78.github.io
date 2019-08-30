@@ -26,5 +26,11 @@ There are various ways in which thius principle can be followed and below are so
 ## Liskov Substitution Principle
 
 ## Interface Segregation Principle
+This principle basically states that interfaces should not be big and should not contain many method definitions. In fact - smaller the interfaces more is the chance that they need to change in future. Ideally interfaces should be smaller and specific to the clients/callers which refer them and not generic in nature. This makles software design more cohesive. 
 
 ## Dependency Inversion Principle
+This is another very important principle which ensures loosely coupled software design if followed religiously. Basically we need to keep in mind the following:
+* High level modules hould not directly depend on low level modules - there should be a layer of abstraction in between
+* And this abstraction layer should not depend on details
+One thumb rule that I always follow and recommend is that never use the new operator in the high level class to instantiate the low level class. Rather inject the interface (corresponding to the low level class) in the high level class by way of constructors and that's how - the high level class and low level class can stay loosely coupled.
+
