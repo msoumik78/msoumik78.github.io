@@ -24,6 +24,8 @@ There are various ways in which thius principle can be followed and below are so
 * Try to use strategy design principle as much as possible - please also refer to my blog on "Clean Code" where I have given an example of how this can be achieved 
 
 ## Liskov Substitution Principle
+This is another principle which ensures good software design and it basically states that if your program expects a base class at some places and during runtime, it receives a subclass of that base class - there should not be any change of behaviour in your program. Which essentially means that the base class and the subclasses can be used interchangeably.
+A thumb rule to ensure that this principle is not broken is to keep the base class as simple as possible without bloating it up and the child classes should all call base parent methods to the maximum extent possible to ensure any inconsistent behaviours between the base class and the child classes.
 
 ## Interface Segregation Principle
 This principle basically states that interfaces should not be big and should not contain many method definitions. In fact - smaller the interfaces more is the chance that they need to change in future. Ideally interfaces should be smaller and specific to the clients/callers which refer them and not generic in nature. This makles software design more cohesive. 
