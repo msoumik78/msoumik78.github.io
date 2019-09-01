@@ -8,7 +8,7 @@ categories: Java
 # Why use Kotlin ? 
 
 In this blogpost, I am going to take a dive into some of the most widely used features of **Kotlin** and see if they are attractive 
-enough for us to make the switch. First let us start with some background/ history. Kotlin was started sometime back by the same guys (Jetbtrains inc.) who had this same motivation to create a completely new JVM based language. The biggest advantage of using Kotlin is that it helps in writing much more concise and clean code.
+enough for us to make the switch. First let us start with some background/ history. Kotlin was started sometime back by the same guys (Jetbtrains inc.) who created the wonderful Java IDE and had this same motivation to create a completely new JVM based language. The biggest advantage of using Kotlin is that it helps in writing much more **concise ,clean and also safe code **.
 
 Let us browse through some of the key features of the Kotling language (please also refer to my Github project [KotlinExperiments] (https://github.com/msoumik78/KotlinExperiments):
 * Variables are declared using the *var* keyword and constants are declared using *val* keyword. Further variables do not need to be declared with their types always, that is auto inferred in case types are not specified
@@ -19,7 +19,7 @@ Let us browse through some of the key features of the Kotling language (please a
   const val age = 40
 {% endhighlight %}
 
-* Another big thing which Kotlin has introduced is null safe. So with good coding in Kotlin you can get rid of the dreaded NullPointerException. Actually Kotling distinguishes between non-nullable and nullable types. So for example - there can be a non nullable String and a nullable one (denoted by _String?_). Please refer to the below code snippet:
+* **Safe code and eliminating NullPointerException completely** - Another big thing which Kotlin has introduced is null safe. So with good coding in Kotlin you can get rid of the dreaded NullPointerException. Actually Kotling distinguishes between non-nullable and nullable types. So for example - there can be a non nullable String and a nullable one (denoted by _String?_). Please refer to the below code snippet:
 {% highlight ruby %}
     var name : String = "Soumik"
     //below line generates a compile time error
@@ -34,7 +34,7 @@ Let us browse through some of the key features of the Kotling language (please a
 {% endhighlight %}
 
 * One of the biggest things in Kotlin is that you do not need to encapsulate all the code within a class
-* Another good thing is that functions can be declared with default parameters as below:
+* **Clean and readable code** Another good thing is that functions can be declared with default parameters as below:
 {% highlight ruby %}
   fun calculateSalaryBasedOnAgeAndDepartment(department: String, age: Int = 40) : Double
 {% endhighlight %}
@@ -47,7 +47,7 @@ So in the above function declarataion, the caller can optionally specify the sec
 
 The above two aspects (default parameters in function declaration and ability to call a function with named parameter)- have made method overloading and builder methods completely redundant and in my opinion - this is one of the smartest enhancements in Kotlin.
 
-* In order to instantiate a class in Kotlin we do NOT require the **new** operator, so classes are just instantiated as shown below:
+* **Clean and concise code** - In order to instantiate a class in Kotlin we do NOT require the **new** operator, so classes are just instantiated as shown below:
 {% highlight ruby %}
   // class instantiated with zero argument constructor
   var studentObject= Student()
