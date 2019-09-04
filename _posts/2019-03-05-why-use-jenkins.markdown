@@ -32,3 +32,10 @@ Normally every DevOps team follows their own practices but below contains some r
 * When its time to do production release, _release_ branch is merged to _master_ branch and it is deployed to production from _master_. So _master_ branch always contains the latest production code.
 
 
+# Some best practices for setting up Jenkins for CI / CD jobs
+In jenkins, you will have to configure/ enter details essentially for the following sections:
+* Source code management - In this section, you will have to specify the Git repo and the branch to be used for building  
+* Build Triggers - You will have to specify the trigger for the job which can be a polling Github at specific intervals.
+* Build Environment and Build - Which means spefying whether maven or graddle or ANT will be used to do the build
+* Post build actions - This is only applicable for the CD jobs where the 
+
