@@ -22,8 +22,10 @@ Following are some major steps while you get started with Docker:
 * Build the docker file to create an image for the container (docker build -t X)
 * Build a container from the previously created image (docker run -d -p 80:8080 Y)
 * Start the container
-* Stop the container (once your job is over)
-* Destroy / remove the container - when you are sure that you no longer need it
+* Stop the container once your job is over (docker stop <container_id>)
+* Destroy / remove the container - when you are sure that you no longer need it (docker rm <container_id>)
+* Destroy / remove the image (docker images rm <image_id>)
+* How to list all containers (docker ps -a)
 
 
 # Docker's role in a modern CI / CD pipeline
