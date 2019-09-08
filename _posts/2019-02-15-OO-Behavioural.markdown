@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Structural OO Design Patterns"
+title: "Behavioural OO Design Patterns"
 date: 2019-02-15 16:55:23 +0530
 categories: Design
 ---
