@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Why Docker and its role in the CI/CD"
+title:  "Basics of Digital Security"
 date:   2019-03-15 13:55:23 +0530
 categories: DigitalSecurity
 ---
