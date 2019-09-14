@@ -11,13 +11,15 @@ For all software developers, some basic knowledge of digital security is absolut
 ## Hashing and Encryption 
 There seems to be some confusion between hashing and encryption so let us start with that.
 Hashing is a process in which a string is hashed and an __irreversible output__ is generated. It can also happen that multiple strings can give the same hashed output. But the important thing to keep in mind about hashing is that the hashed output is completely irreversible which means that it is never possible to get back the original input from the hashed output.
-The basic hashing algirithm is MD5. But the more advanced hashing algorithms include SHA-1, SHA-256, SHA-384 , SHA-512 etc. And all these can be further enhanced by adding a salt.
+The basic hashing algirithm is __MD5__. But the more advanced hashing algorithms include __SHA-1, SHA-256, SHA-384 , SHA-512 etc__. And all these can be further enhanced by adding a salt.
 One of the most advanced hashing algorithm is __PBKDF2WithHmacSHA1__
 Please please also refer to my Github project [DigitalSecurityExamples](https://github.com/msoumik78/DigitalSecurityExamples/blob/master/src/org/experiments/HashingDemonstrations.java)
 
-Some sample output from the program:
+Some sample output from the program when the same input string was hashed with MD5 and SHA-256 algorithms :
+**********************************************************************************************************************
 Input content: I am Soumik, Hashing Algo: MD5, Salted: true, HashedHexOutput: ed23310e138b761133e398eeb5ec9227
 Input content: I am Soumik, Hashing Algo: SHA-256, Salted: true, HashedHexOutput: e11decdd1856ab9549deac17dc98c6bee790d8d1c7c70b7d8d5a2621a734e5be
+**********************************************************************************************************************
 
 On the other hand, encryption is a technique in which a string is transformed to a completely different one but the process is reversible. Also another difference with encryption is that no 2 strings can produce the same encrypted output.
 Normally encryption is done using some keys and hence there are 2 types of encryption methodologies:
@@ -34,3 +36,6 @@ However encryption is used to transfer secret/ confidential information over the
 key and sent over the wire. Only the receiver (who has his own private key) can de-crypt the message and nobody else can.
 
 ## Digital Signature vs Digital Signing
+Digital certificate is essentially similar to a physical stuff like passport/DL which contains the owner's public key and it is certified by an issuing authority.
+However digital signature is a message digest (which means a hash) generated when the signer uses his private key to encrypt a message. This message can be de-crypted by anybody (who has the signer's public key) and can verify it.
+__Digital signature is used not to conceal the message but to prove that the message has not been tampered with.__
