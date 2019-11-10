@@ -41,24 +41,4 @@ needs data, you have to store it in cookies.**
 
 **IndexedDB** can store much **more data and can store data apart from String.** Also IndexedDB has a asynchronous API and hence does not block the UI. 
 
-### Webworkers
-This helps to execute a javascript task in the background without blocking the UI or user actions, sample code snippets below:
-{% highlight ruby %}
-          var w;
-          function startWorker() {
-              if(typeof(Worker) !== "undefined") {
-                    if(typeof(w) == "undefined") {            
-                        w = new Worker("demo_workers.js");        
-                     }        
-                   w.onmessage = function(event) {
-                        document.getElementById("result").innerHTML = event.data;
-                     };    
-                   } else {        
-                        document.getElementById("result").innerHTML = "Sorry! No Web Worker support.";
-                  }
-               }
-          function stopWorker() {     
-              w.terminate();    
-              w = undefined;
-            }
-{% endhighlight %}
+*This block will be enhanced later with examples of websockets and webworkers.*
