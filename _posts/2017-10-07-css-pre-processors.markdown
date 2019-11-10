@@ -79,4 +79,4 @@ I think using CSS pre-processors definitely brings in a lot of advantages to the
 }
 {% endhighlight %}
 
-However I still think using a simple CSS pre-processor (LESS / SASS) gives much more power and flexibility to the frontend developer. Now once you have decided thatr you will indeed use a CSS pre-processor and then if the next question is which one - it is entirely a personal choice as both are very siumilar. While market share of SASS is much more than LESS and SASS is written in Ruby while LESS in Javascript, I still believe that using one is entirely a personal discretion. So go ahead and try both and decide yourself! 
+**However I still think using a simple CSS pre-processor (LESS / SASS) gives much more power and flexibility to the frontend developer. Now once you have decided that you will indeed use a CSS pre-processor and then if the next question is which one - it is entirely a personal choice as both are very similar. While market share of SASS is much more than LESS and SASS is written in Ruby while LESS in Javascript, I still believe that using one is entirely a personal discretion. So go ahead and try both and decide yourself! **
