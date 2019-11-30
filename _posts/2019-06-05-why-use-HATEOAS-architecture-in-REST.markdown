@@ -29,3 +29,5 @@ You can use Spring boot as the framework for building HATEOAS styled REST servic
             <artifactId>spring-boot-starter-hateoas</artifactId>
         </dependency>
 {% endhighlight %}
+
+please also refer to my Github project [HATEOAS](https://github.com/msoumik78/springboowithHATEOAS)
