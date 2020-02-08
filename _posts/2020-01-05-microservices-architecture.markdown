@@ -8,13 +8,16 @@ categories: Java
 # Why use Microservices ?
 
 In this blog, I am going to discuss about microservices. Well lets accept the fact that microservices architecture is the order of the day. Everybody is de-composing their old fashioned monolithic application into small chunks of manageable microservices.
+That way the application consists of almost independent multiple projects which can be independently worked on by different persons. It takes de-coupling to the next level.
 
 So I have created 2 sample microservices for a pseudo banking application:
 * authentication microservice
 * core banking microservice
 
-The first one which is the authentication microservice exposes a REST endpoint like : /retailBanking/authenticate and is a POST one. If the credentials are correct, this one returns a valid JwT.
+The first one which is the authentication microservice exposes a REST endpoint like : /retailBanking/authenticate and is a POST one. If the credentials are correct, only then it returns a valid JwT, else an exception is thrown for invalid credentials. 
+
 The second one is a sample core banking web service exposes a REST endpoint like : /retailBanking/getAccountBalance and is a GET one. Some more aspects:
+* It accepts the JWT in the Authorixzation header and also the userName as a request parameter
 * If the request does not contain the JWT - it will not be accepted
 * If the request contains an invalid JWT - even then it will not be accepted 
 
