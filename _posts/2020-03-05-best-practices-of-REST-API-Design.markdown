@@ -5,13 +5,40 @@ date:   2020-03-05 13:55:23 +0530
 categories: MicroServices
 ---
 
-# Why use Microservices ?
 
-In this blog, I am going to discuss about microservices. Well lets accept the fact that microservices architecture is the order of the day. Everybody is de-composing their old fashioned monolithic application into small chunks of manageable microservices.
-That way the application consists of almost independent multiple projects which can be independently worked on by different persons. It takes de-coupling to the next level.
+* Use Json as the payload format - specifically from server side indicate that the content type is application/json
+* Design endpoint names with nouns / resources and use the HTTP methods as verbs to indicate what actions the endpoint can have
+	Also normally use plurals for resource names like customers instead of customer below so that user of the api understands that he is dealing with a collection and not individual customer.
+    Like     
+    /api/v1/customers/5
+     - With GET mapping, you can retrieve the customer with 5 as Id
+     - With PUT mapping, you can update the customer with 5 as Id
+     - With DELETE mapping, you can delete the customer with 5 as Id
 
-So I have created 2 sample microservices for a pseudo banking application:
-* authentication microservice
-* core banking microservice
 
-The first one which is the authentication microservice exposes a REST endpoint like : /retailBanking/authenticate and is a POST one. If the credentials are correct, only then it returns a valid JwT, else an exception is thrown for invalid credentials. 
+   Now for the same endpoint
+	/api/v1/customers/ - With POST mapping, you can create customer by passing the customer as json in request body
+
+ You should not name endpoint as /api/v1/customers/create
+			
+
+* Use query string to filter , and sort and paginate the data
+ 	/api/v1/customers?status=ACTIVE
+ 
+* version the apis clearly - so that you do not need to force your end clients to use a specific version like 
+
+    /api/v1/customers/5
+    /api/v2/customers/5
+    
+*  Use nesting in API endpoints to show relationships : Like if there are many groups and each group has a set of customers, you should design like :
+
+	/api/v1/groups/2/customers/5  - With GET mapping, it indicates you retrieve the 5th customer within 3nd group
+
+
+*  Return http status code to clearly indicate the http response like use X in Spring boot
+
+    - The client application behaved erroneously (client error - 4xx response code)
+    - The API behaved erroneously (server error - 5xx response code)
+    - The client and API worked (success - 2xx response code)     
+
+
