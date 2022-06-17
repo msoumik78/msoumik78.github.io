@@ -21,7 +21,7 @@ Also normally always using plurals for resource names like customers instead of 
      - With PUT mapping, the same URI can update the customer with 5 as Id
      - With DELETE mapping, the same URI can delete the customer with 5 as Id
 
- Endpoints should NOT be named as /api/v1/customers/create or /api/v1/customers/delete
+      Endpoints should NOT be named as /api/v1/customers/create or /api/v1/customers/delete
 			
 * Using query string to filter sort and paginate the data
  	/api/v1/customers?status=ACTIVE
