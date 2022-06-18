@@ -2,7 +2,7 @@
 layout: post
 title:  "Why use Event Driven architecture ?"
 date:   2020-02-05 13:55:23 +0530
-categories: "Event Driven Architecture"
+categories: Event-Driven-Architecture
 ---
 
 # Why use Event Driven ARchitecture ? 
