@@ -24,6 +24,12 @@ Here is a quick summary of Kotlin's classes :
 
 * The 'extends' and 'implements' have been replaced by the colon (:) symbol - see how smart it is , compact and effective.
 * Multiple classes can exist in a package and there is no need to have the main class name as the file name. No need to have the package hierarchy match directory structure. In fact one of the common practice in Kotlin is to declare all the classes representing value objects or data transfer objects in a single file.
-* Data class is a special type of class which is meant as containers for data transport and they are declared with the prefix 'data' before the class name. These data classes provide additional methods - toString(), hashcode(), copy()
+* Data class is a special type of class which is meant as containers for data transport and they are declared with the prefix 'data' before the class name. These data classes provide additional methods - toString(),equals(), hashcode(), copy()
+
+{% highlight ruby %}
+    data class Computer(var cpuType : String, var ramSize : Int)
+{% endhighlight  %}
+
+
 * Kotlin classes are by default final, if you have to declare non final classes - you have to declare them as open. Again this has been done intentionally to keep the classes immutable.
 
