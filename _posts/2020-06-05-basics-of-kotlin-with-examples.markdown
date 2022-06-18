@@ -15,37 +15,46 @@ Here I’ll summarise some of the basic features which have become really popula
 	Also in Kotlin first the variable name is declared followed by a colon and the variable type. 
 	Variable type is optional in Kotlin and it is able to auto infer.
 
+{% highlight ruby %}
 	var data1 : String = “text”
 	val data2:  String = “text”
+{% endhighlight  %}
+
 
 * String has 2 significant additions:
     * Multiline strings - this feature has now been introduced in Java as well
     * String templates which contain some dynamic parts
 
+{% highlight ruby %}
 var letterBody: String = """
     Dear ${letterRecipeint ?: "Recipent" }
     This is to inform you that we have.....
     You are receiving this letter on ${Date()}
 """.trimIndent()
+{% endhighlight %}
 
 
 * Functions have 2 main enhancements which have made function overloading not necessary:
     * You can specify default value of some parameters and hence those parameters may not be supplied 
     * You can also invoke function with named arguments
 
+{% highlight ruby %}
 fun buildComputer(cpuTypeProvided: String = "i5",
                   ramSizeInGBProvided: Int = 8)
     = Computer(cpuType = cpuTypeProvided,ramSize = ramSizeInGBProvided )
+
 buildComputer()
 buildComputer(cpuTypeProvided = "i9")
 buildComputer(cpuTypeProvided = "i9", ramSizeInGBProvided = 16)
+{% endhighlight  %}
 
 
 
 * Kotlin has a different way to deal or completely remove the null pointer exception from runtime to compile time. For every data type, Kotlin essentially has 2 types (one type can’t contain null value and the other one can contain null), say for example :
-		
+{% highlight ruby %}		
 		var text1 : String 
 		var text2 : String?	
+{% endhighlight %}
 	     
 		So text1 can’t contain null values. If you try to assign null values in it, the compiler will flag it as a compile time exception.
 		However text2 can contain null values
