@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Best Practices of REST API Design"
+title:  "Best practices for designing Microservices"
 date:   2020-04-05 13:55:23 +0530
 categories: MicroServices
 ---
