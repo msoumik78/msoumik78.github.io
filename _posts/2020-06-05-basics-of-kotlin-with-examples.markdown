@@ -32,7 +32,7 @@ Kotlin is a JVM language which has not only become the de-facto programming lang
 {% endhighlight %}
 
 
-* Functions have 2 main enhancements which have made function overloading not necessary:
+* Functions have 2 main enhancements which have made function overloading redundant:
     * You can specify default value of some parameters and hence those parameters may not be supplied 
     * You can also invoke function with named arguments
 
@@ -46,6 +46,7 @@ Kotlin is a JVM language which has not only become the de-facto programming lang
 	buildComputer(cpuTypeProvided = "i9", ramSizeInGBProvided = 16)
 {% endhighlight  %}
 
+In the above example, the function buildComputer is declared with default values for both the arguments. So as shown above, you can even invoke the same function without any argument and then it will take the default values of those arguments which were not specified. You can of course supply specific values in which case the default values will not be used.
 
 
 * Kotlin has a different way to deal or completely remove the null pointer exception from runtime to compile time. For every data type, Kotlin essentially has 2 types (one type can’t contain null value and the other one can contain null), say for example :
