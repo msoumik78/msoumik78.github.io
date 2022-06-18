@@ -5,13 +5,13 @@ date:   2020-06-05 13:55:23 +0530
 categories: Kotlin
 ---
 
-Basics of Kotlin with examples
+# Basics of Kotlin with examples
 
-Kotlin is a JVM language which has not only become the de-facto programming language for developing Android applications but also increasingly becoming very popular on the server side as well. So server side developers like me are also taking Kotlin very seriously.Here I’ll summarise some of the basic features which have become really popular (remember Kotlin aims to make the code as compact and minimal as possible) :
+Kotlin is a JVM language which has not only become the de-facto programming language for developing Android applications but also is increasingly becoming very popular on the server side as well. So server side folks are also taking Kotlin very seriously because of so many cool features. Here I’ll summarise some of the basic features which have become really popular (remember Kotlin aims to make the code as compact and minimal as possible). If you look at each of the features below, they seem to be very logical way to make the Java syntax more concise but still readable and understandable.
 
 * We do not need to end sentences with semicolons
 * Variables are declared with keyword var and constants with keyword val
-  Also in Kotlin the variable name is declared/written first followed by a colon and then the variable type. Variable type is optional in Kotlin and it is able to auto infer.
+  Also in Kotlin, the variable name is declared/written first followed by a colon and then the variable type. Variable type is optional in Kotlin and it is able to auto infer.
 
 {% highlight ruby %}
 	var data1 : String = “text”
@@ -54,5 +54,5 @@ Kotlin is a JVM language which has not only become the de-facto programming lang
 		var text2 : String?	
 {% endhighlight %}
 	     
-		So text1 can’t contain null values. If you try to assign null values in it, the compiler will flag it as a compile time exception.
-		However text2 can contain null values
+So text1 can’t contain null values. If you try to assign null values in it, the compiler will flag it as a compile time exception.
+However text2 can contain null values
