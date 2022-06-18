@@ -7,13 +7,11 @@ categories: Kotlin
 
 Basics of Kotlin with examples
 
-Kotlin is a JVM language which has not only become the de-facto programming language for developing Android applications but also increasingly becoming very popular on the server side as well. So server side developers like me are also taking Kotlin very seriously.
-Here I’ll summarise some of the basic features which have become really popular (remember Kotlin aims to make the code as compact and minimal as possible) :
+Kotlin is a JVM language which has not only become the de-facto programming language for developing Android applications but also increasingly becoming very popular on the server side as well. So server side developers like me are also taking Kotlin very seriously.Here I’ll summarise some of the basic features which have become really popular (remember Kotlin aims to make the code as compact and minimal as possible) :
+
 * We do not need to end sentences with semicolons
 * Variables are declared with keyword var and constants with keyword val
-
-	Also in Kotlin first the variable name is declared followed by a colon and the variable type. 
-	Variable type is optional in Kotlin and it is able to auto infer.
+  Also in Kotlin the variable name is declared/written first followed by a colon and then the variable type. Variable type is optional in Kotlin and it is able to auto infer.
 
 {% highlight ruby %}
 	var data1 : String = “text”
@@ -26,11 +24,11 @@ Here I’ll summarise some of the basic features which have become really popula
     * String templates which contain some dynamic parts
 
 {% highlight ruby %}
-var letterBody: String = """
-    Dear ${letterRecipeint ?: "Recipent" }
-    This is to inform you that we have.....
-    You are receiving this letter on ${Date()}
-""".trimIndent()
+	var letterBody: String = """
+	    Dear ${letterRecipeint ?: "Recipent" }
+	    This is to inform you that we have.....
+	    You are receiving this letter on ${Date()}
+	""".trimIndent()
 {% endhighlight %}
 
 
@@ -39,13 +37,13 @@ var letterBody: String = """
     * You can also invoke function with named arguments
 
 {% highlight ruby %}
-fun buildComputer(cpuTypeProvided: String = "i5",
-                  ramSizeInGBProvided: Int = 8)
-    = Computer(cpuType = cpuTypeProvided,ramSize = ramSizeInGBProvided )
+	fun buildComputer(cpuTypeProvided: String = "i5",
+			  ramSizeInGBProvided: Int = 8)
+	    = Computer(cpuType = cpuTypeProvided,ramSize = ramSizeInGBProvided )
 
-buildComputer()
-buildComputer(cpuTypeProvided = "i9")
-buildComputer(cpuTypeProvided = "i9", ramSizeInGBProvided = 16)
+	buildComputer()
+	buildComputer(cpuTypeProvided = "i9")
+	buildComputer(cpuTypeProvided = "i9", ramSizeInGBProvided = 16)
 {% endhighlight  %}
 
 
