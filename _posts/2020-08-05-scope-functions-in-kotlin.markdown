@@ -16,14 +16,15 @@ Following are the types of scope functions (remember these scope functions do no
 	apply - This one is mainly used to set some properties of the context object. Context object is referred with ‘this’
  	also - This one is mainly used to write some log statements. Context object is referred with ‘it’
 
-
+{% highlight ruby %}
 	class Computer(var cpuType : String = "", var ramSize : Int=0)
-var computer2 = Computer().apply {
-    this.cpuType = "i9"
-    this.ramSize = 32
-}.also {
-    println("Configuration of computer : Cpu =  ${it.cpuType} , Ram = ${it.ramSize}")
-}
+	var computer2 = Computer().apply {
+	    this.cpuType = "i9"
+	    this.ramSize = 32
+	}.also {
+	    println("Configuration of computer : Cpu =  ${it.cpuType} , Ram = ${it.ramSize}")
+	}
+{% endhighlight %}
 
 
 
