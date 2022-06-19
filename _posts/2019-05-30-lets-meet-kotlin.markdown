@@ -2,7 +2,7 @@
 layout: post
 title:  "Why use Kotlin ?"
 date:   2019-05-30 13:55:23 +0530
-categories: Java
+categories: Kotlin
 ---
 
 # Why use Kotlin ? 
