@@ -19,21 +19,17 @@ In this blog, I am not going to the basics of Spring Boot but discuss some of th
 
 * **Usage of Kotlin as the programming language** - There are several advantages of using Kotln as the programming language and now spring boot has first class support for Kotlin. The main advantages that I see in using Kotlin are :
    - Very concise and readable code - see how multiple model objects can be declared in a small file - we can declare all model or data classes in a single file and don’t need even Lombok
-   {% highlight ruby %}
+{% highlight ruby %}
         @Component
         class Student(name: String, age : Int, address : String?, class : Int)
-
         @Component
         class Teacher(name: String, age : Int, level : String?, salary : Float)
-    {% endhighlight %}
-   
+{% endhighlight %}   
    - Ability to use Kotlin co-routines and obtain much better scalability. With co-routines (which are similar to threads but very very lightweight) - we can make the stack completely asynchronous and hence much more scalable with increasing load. So basically all the methods in the call stack are suspend functions - which means - controller, service and DAP layers are all suspend functions.
 
 * **Usage of  async ability** - For long running tasks, you can use the async ability of Kotlin so that you can process long running backend tasks with a separate dedicated thread pool. This is often used in the below circumstances:
-    - When you want to submit long running jobs to backend but don’t want the caller thread to wait for long
-
-   {% highlight ruby %}
-
+   - When you want to submit long running jobs to backend but don’t want the caller thread to wait for long
+{% highlight ruby %}
         // First enable async execution using a dedicated async threadpool 
         @Configuration
         @EnableAsync
@@ -52,22 +48,18 @@ In this blog, I am not going to the basics of Spring Boot but discuss some of th
             @Async("asyncExecutor")
             fun X() {
             }
-
-   {% endhighlight %}
-
-    - When for a single incoming request - you my need to make parallel calls to multiple backends and then collect (and collate) the response
+{% endhighlight %}
+   - When for a single incoming request - you my need to make parallel calls to multiple backends and then collect (and collate) the response
 
 
 * **Usage of Micrometer prudently** -  Using micrometer and the associated metrics and a dimensional metrics system (like SignalFX) can already give you a lot of information about the performance. Like you can simply annotate the controllers as below which will give you very useful info about the average latency of the requests in production
-
-   {% highlight ruby %}
-
+{% highlight ruby %}
         @RestController
         @RequestMapping("/api/1")
         @Timed(percentiles = {0.1, 0.5, 0.95, 0.99})
         public class TasksController {
         }
-   {% endhighlight %}
+{% endhighlight %}
     
     @Timed annotation above produces latency percentiles of the incoming requests and these are very useful out-of-box information to start with.
 
