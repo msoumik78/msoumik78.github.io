@@ -53,12 +53,23 @@ In this blog, I am not going to the basics of Spring Boot but discuss some of th
             fun X() {
             }
 
-   {% highlight ruby %}
+   {% endhighlight %}
 
     - When for a single incoming request - you my need to make parallel calls to multiple backends and then collect (and collate) the response
 
 
 * **Usage of Micrometer prudently** -  Using micrometer and the associated metrics and a dimensional metrics system (like SignalFX) can already give you a lot of information about the performance. Like you can simply annotate the controllers as below which will give you very useful info about the average latency of the requests in production
+
+   {% highlight ruby %}
+
+        @RestController
+        @RequestMapping("/api/1")
+        @Timed(percentiles = {0.1, 0.5, 0.95, 0.99})
+        public class TasksController {
+        }
+   {% endhighlight %}
+    
+    @Timed annotation above produces latency percentiles of the incoming requests and these are very useful out-of-box information to start with.
 
 * **Resilience** -In today’s world - resilience is very important and we should build some degree of resilience within our application. So here are some of the common stuff that should be leveraged:
     - If you are connecting to an external cache system like Hazelcast or Redis - you should build some custom resilience so that the client can recover and reconnect in case the cache system goes down intermittently
