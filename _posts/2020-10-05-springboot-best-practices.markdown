@@ -19,11 +19,45 @@ In this blog, I am not going to the basics of Spring Boot but discuss some of th
 
 * **Usage of Kotlin as the programming language** - There are several advantages of using Kotln as the programming language and now spring boot has first class support for Kotlin. The main advantages that I see in using Kotlin are :
    - Very concise and readable code - see how multiple model objects can be declared in a small file - we can declare all model or data classes in a single file and don’t need even Lombok
+   {% highlight ruby %}
+        @Component
+        class Student(name: String, age : Int, address : String?, class : Int)
+
+        @Component
+        class Teacher(name: String, age : Int, level : String?, salary : Float)
+    {% endhighlight %}
+   
    - Ability to use Kotlin co-routines and obtain much better scalability. With co-routines (which are similar to threads but very very lightweight) - we can make the stack completely asynchronous and hence much more scalable with increasing load. So basically all the methods in the call stack are suspend functions - which means - controller, service and DAP layers are all suspend functions.
 
 * **Usage of  async ability** - For long running tasks, you can use the async ability of Kotlin so that you can process long running backend tasks with a separate dedicated thread pool. This is often used in the below circumstances:
     - When you want to submit long running jobs to backend but don’t want the caller thread to wait for long
+
+   {% highlight ruby %}
+
+        // First enable async execution using a dedicated async threadpool 
+        @Configuration
+        @EnableAsync
+        class AsyncConfig {
+            @Bean(name = arrayOf("asyncExecutor"))
+            fun asyncExecutor(): Executor? {
+                val executor = ThreadPoolTaskExecutor()
+                executor.corePoolSize = 50
+                executor.maxPoolSize = 100
+                executor.initialize()
+                return executor
+            }
+        }
+
+        // Annotate the long running function with async annotation as below which will ensure that it returns async and uses threads only from the above pool
+            @Async("asyncExecutor")
+            fun X() {
+            }
+
+   {% highlight ruby %}
+
     - When for a single incoming request - you my need to make parallel calls to multiple backends and then collect (and collate) the response
+
+
 * **Usage of Micrometer prudently** -  Using micrometer and the associated metrics and a dimensional metrics system (like SignalFX) can already give you a lot of information about the performance. Like you can simply annotate the controllers as below which will give you very useful info about the average latency of the requests in production
 
 * **Resilience** -In today’s world - resilience is very important and we should build some degree of resilience within our application. So here are some of the common stuff that should be leveraged:
