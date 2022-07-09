@@ -12,7 +12,7 @@ This is a popular feature among Kotlin developers to keep the code base small. I
 As the name suggests, with this feature, one can actually so called "extend" 3rd party libraries thereby also honour one of the important tenets of object oriented programming which is "Open Closed Principle".
 Recommendation is to use extension functions instead of writing utility classes and static functions. Now let's see some extension fiunctions in action :
 
-{% highlight Ruby %}
+{% highlight ruby %}
 // On String class - as if an extension of String itself. Can be invoked as : "amusement".removeFirstAndLastCharacter()
 fun String.removeFirstAndLastCharacter() = this.substring(1, this/length -1)
 
@@ -43,8 +43,7 @@ val y = 10 addCustom 20
 This is the technique of pure functional programming. Essentially - higher order functions are those which accept functions as arguments and return functions.
 Higher order functions are most useful when writing some generic code like : writing API invocation
 So we can write a higher order function to invoke a REST endpoint and one of the arguments of the HOF can be the actual method.  
-
-{% highlight Ruby %}  
+{% highlight ruby %}  
 // Example when accepting function as an argument :
 
 fun calculate(x: Int, y: Int, operation: (Int, Int) -> Int): Int {  
@@ -61,5 +60,5 @@ fun main() {
 val addOffset = {x : Int -> x + 10}
 println(addOffset(2)
 println(addOffset.invoke(2))  
-{% highlight Ruby %}  
+{% endhighlight %}  
   
