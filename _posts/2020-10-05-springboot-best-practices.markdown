@@ -11,11 +11,11 @@ There is no doubt that Spring Boot is the most commonly used framework when it c
 In this blog, I am not going to the basics of Spring Boot but discuss some of the best practices that I have learnt over time:
 
 * **Usage of profiles and usage of config server** : Some of my recommendations are below : 
-    - Never use properties file , always use yaml format simply because yaml is much user friendly format as it clearly shows the hierarchy. 
+    - Never use properties file , always use yaml format simply because yaml is much user friendly as it clearly shows the hierarchy. 
     - Use spring profiles prudently in properties file and in configuration server and here are some more details:
-     -  Generic (or environment independent properties) should be declared at the top of yml. 
-     -  Then some properties which are environment specific should be declared under specific profiles. 
-     -  Any property which you can often change a lot (like some connection timeout, read timeout etc.) and for which normally no code change is required - should go in config server. Because if these properties change, you can just restart config server - no need to restart or deploy application. 
+        -  Generic (or environment independent properties) should be declared at the top of yml. 
+        -  Then some properties which are environment specific should be declared under specific profiles. 
+        -  Any property which you can often change a lot (like some connection timeout, read timeout etc.) and for which normally no code change is required - should go in config server. Because if these properties change, you can just restart config server - no need to restart or deploy application. 
 
 * **Usage of Kotlin as the programming language** - There are several advantages of using Kotln as the programming language and now spring boot has first class support for Kotlin. The main advantages that I see in using Kotlin are :
    - Very concise and readable code - see how multiple model objects can be declared in a small file - we can declare all model or data classes in a single file and don’t need even Lombok
