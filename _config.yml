@@ -40,3 +40,4 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+staticman_url: https://staticman-bot-msoumik/v3/entry/github/msoumik78/msoumik78.github.io/master/comments
